@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
 
-  fetchData = () => {
+  const fetchData = () => {
     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
@@ -14,9 +14,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">CloseBuy</header>
-      <button onClick={this.fetchData} >
+    <div>
+      <header>CloseBuy</header>
+      <button onClick={fetchData()} >
           Fetch Data
         </button>        
     </div>
