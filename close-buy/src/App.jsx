@@ -3,7 +3,30 @@ import axios from 'axios';
 import './App.css';
 import Splash from './Splash'
 
-const showSplash = true
+/* possible different color schemes */
+const themes = {
+  pinkBlue: {
+    primary: 'pink',
+    secondary: 'blue'
+  },
+  pinkTeal: {
+    primary: 'pink',
+    secondary: 'teal'
+  },
+  bluePink: {
+    primary: 'blue',
+    secondary: 'pink'
+  },
+  yellowOrange: {
+    primary: 'yellow',
+    secondary: 'orange'
+  },
+  
+}
+
+const currentTheme = themes.pinkTeal;
+
+const _testShowSplash = true;
 
 function App() {
 
@@ -18,7 +41,11 @@ function App() {
 
   return (
     <div>
-      <Splash />
+      {/* <Splash /> */}
+      <Search />
+      {/* <Categories /> */}
+      {/* <Category /> */}
+
     </div>
   );
 }
