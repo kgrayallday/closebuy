@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Splash from './Splash'
+import Splash from './Splash';
+import Search from './Search';
 
 /* possible different color schemes */
 const themes = {
