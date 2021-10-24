@@ -1,0 +1,40 @@
+.search {
+  margin: 60px auto;
+  width: 500px;
+  height: 60px
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content:center ;
+}
+.surf-field {
+  width: 60%;
+  padding: 10px 35px 10px 15px;
+  color:white;
+  font-weight: 900;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.surf-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 5px;
+  margin-left: -40px;
+}
+
+.surf-button i {
+  color: white;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
