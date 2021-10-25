@@ -6,6 +6,8 @@ function Search(props) {
   const [term, setTerm] = useState("");
   const { onSave } = props;
 
+  // Function passes the search term state, up to App.jsx components
+  // Will only provide data onSave event.
   const saveForm = () => {
     onSave(term)
     setTerm("")

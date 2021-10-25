@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
@@ -6,9 +6,15 @@ import Search from './Search';
 import Navbar from './Navbar';
 
 function App() {
+  const { queryTerm, setQueryTerm } = useState();
+
+  // Provides search term string from Search.jsx
   function saveFn(searchTerm) {
+    setQueryTerm(...searchTerm)
     console.log('search term', searchTerm)
   }
+
+
   // const fetchData = () => {
   //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
   //   .then((response) => {
