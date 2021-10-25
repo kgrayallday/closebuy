@@ -5,33 +5,10 @@ import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
 
-/* possible different color schemes */
-const themes = {
-  pinkBlue: {
-    primary: 'pink',
-    secondary: 'blue'
-  },
-  pinkTeal: {
-    primary: 'pink',
-    secondary: 'teal'
-  },
-  bluePink: {
-    primary: 'blue',
-    secondary: 'pink'
-  },
-  yellowOrange: {
-    primary: 'yellow',
-    secondary: 'orange'
-  },
-  
-}
-
-const currentTheme = themes.pinkTeal;
-
-const _testShowSplash = true;
-
 function App() {
-
+  function saveFn(searchTerm) {
+    console.log('search term', searchTerm)
+  }
   // const fetchData = () => {
   //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
   //   .then((response) => {
@@ -45,7 +22,7 @@ function App() {
     <div>
       <Navbar />
       {/* <Splash /> */}
-      <Search />
+      <Search onSave={saveFn} />
       {/* <Categories /> */}
       {/* <Category /> */}
     </div>
