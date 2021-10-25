@@ -6,15 +6,15 @@ function Navbar() {
 
   return(
     <nav>
-  <div class="left">
+  <div className="left">
   <i class="fas fa-couch" id='brand-mark'></i>
   </div>
 
-  <div class="center">
+  <div className="center">
     CloseBuy
   </div>
 
-  <div class="right">
+  <div className="right">
     About
   </div>
 </nav>
