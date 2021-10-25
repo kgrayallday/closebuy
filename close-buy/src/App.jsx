@@ -14,15 +14,20 @@ function App() {
     console.log('search term', searchTerm)
   }
 
+  // Function queries craigslist with search term string.
+  const craigslistData = (queryTerm) => {
+    const url = `api/products/craigslist?q=${queryTerm}`;
 
-  // const fetchData = () => {
-  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log("Full response data --- ", response.data) // The entire response from the API
-  //     console.log("Response data message --- ", response.data.message) // Just the message
-  //   }) 
-  // }
+    axios.get(url)
+    .then((response) => {
+      console.log("Craigslist data example", response.data);
+    })
+  }
+
+  // Run function once queryterm has been saved.
+  useEffect(() => {
+    craigslistData(queryTerm)
+  }, [queryTerm])
 
   return (
     <div>
