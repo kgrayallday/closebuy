@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
 import Search from './Search';
+import Navbar from './Navbar';
 
 /* possible different color schemes */
 const themes = {
@@ -42,11 +43,11 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       {/* <Splash /> */}
       <Search />
       {/* <Categories /> */}
       {/* <Category /> */}
-
     </div>
   );
 }
