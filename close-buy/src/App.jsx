@@ -7,12 +7,10 @@ import Navbar from './Navbar';
 
 function App() {
   const [ queryTerm, setQueryTerm ] = useState("");
-  console.log("The set term", queryTerm)
 
   // Provides search term string from Search.jsx
   function saveFn(searchTerm) {
     setQueryTerm(searchTerm)
-    console.log('search term', searchTerm)
   };
 
   // Function queries craigslist with search term string.
