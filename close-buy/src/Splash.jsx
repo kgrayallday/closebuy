@@ -4,10 +4,10 @@ import './Splash.css';
 function Splash() {
 
   return (
-    <div class='splash-parent'>
-      <div class='splash-child'>
+    <div className='splash-parent'>
+      <div className='splash-child'>
         <header><b>Close</b>Buy</header>
-        <i class="fas fa-couch"></i>
+        <i className="fas fa-couch"></i>
       </div>      
     </div>
   );
