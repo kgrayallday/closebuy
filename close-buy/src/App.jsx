@@ -4,27 +4,28 @@ import './App.css';
 import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
+import ProductCard from './ProductCard';
 
 /* possible different color schemes */
-const themes = {
-  pinkBlue: {
-    primary: 'pink',
-    secondary: 'blue'
-  },
-  pinkTeal: {
-    primary: 'pink',
-    secondary: 'teal'
-  },
-  bluePink: {
-    primary: 'blue',
-    secondary: 'pink'
-  },
-  yellowOrange: {
-    primary: 'yellow',
-    secondary: 'orange'
-  },
+// const themes = {
+//   pinkBlue: {
+//     primary: 'pink',
+//     secondary: 'blue'
+//   },
+//   pinkTeal: {
+//     primary: 'pink',
+//     secondary: 'teal'
+//   },
+//   bluePink: {
+//     primary: 'blue',
+//     secondary: 'pink'
+//   },
+//   yellowOrange: {
+//     primary: 'yellow',
+//     secondary: 'orange'
+//   },
   
-}
+// }
 
 const currentTheme = themes.pinkTeal;
 
@@ -47,7 +48,9 @@ function App() {
       {/* <Splash /> */}
       <Search />
       {/* <Categories /> */}
-      {/* <Category /> */}
+      <ProductCard />
+      {/* <Category productArray={productArray} /> */}
+
     </div>
   );
 }
