@@ -7,6 +7,16 @@ import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 
 function App() {
+  // loading state for splash screen
+  const [ loading, setLoading ] = useState(true);
+
+  // change the loading state after displaying splash for 2 seconds
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2500)
+  }, [])
+
+
+
   const [ queryTerm, setQueryTerm ] = useState("");
 
   // Provides search term string from Search.jsx
@@ -32,13 +42,18 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      {/* <Splash /> */}
-      <Search onSave={saveFn} />
-      {/* <Categories /> */}
-      <ProductCard />
-      {/* <Category productArray={productArray} /> */}
-
+      {loading === false ? (
+        <div>
+          <Navbar />
+          {/* <Splash /> */}
+          <Search onSave={saveFn} />
+          {/* <Categories /> */}
+          <ProductCard />
+          {/* <Category productArray={productArray} /> */}
+        </div>
+      ) : (
+        <Splash />
+      )}
     </div>
   );
 }
