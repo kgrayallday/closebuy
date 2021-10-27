@@ -5,11 +5,11 @@ function Search() {
   // const something = {/* something */}
 
   return (
-    <div class="search">
-      <form action="/" method="GET" class="form">
-        <input type="search" placeholder="Surf!" class="surf-field" />
-        <button type="submit" class="surf-button">
-        <i class="fas fa-search"></i>
+    <div className="search">
+      <form action="/" method="GET" className="form">
+        <input type="search" placeholder="Surf!" className="surf-field" />
+        <button type="submit" className="surf-button">
+        <i className="fas fa-search"></i>
         </button>
       </form>
     </div>
