@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
 import Search from './Search';
-import Navbar from './Navbar';\
+import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 
 function App() {
