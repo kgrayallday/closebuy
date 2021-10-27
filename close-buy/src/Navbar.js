@@ -1,12 +1,13 @@
 import React from 'react';
 import './Navbar.css';
+import logo from './img/closebuy-logo-white.png';
 
 function Navbar() {
 
   return(
     <nav>
       <div className="left">
-        <i className="fas fa-couch" id='brand-mark'></i>
+        <img src={logo} alt='' height='50vw'/>
       </div>
 
       <div className="center">
