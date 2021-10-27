@@ -1,0 +1,14 @@
+nav {
+  color: white;
+  width: auto;
+  background-color: rgb(117, 169, 249);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;/* top-bottom left-right */ 
+}
+
+#brand-mark{
+  font-size: 1.5em;
+}
