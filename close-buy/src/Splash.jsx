@@ -1,5 +1,6 @@
 import React from 'react';
 import './Splash.css';
+import logo from './img/closebuy-logo-blue.png';
 
 function Splash() {
 
@@ -7,7 +8,7 @@ function Splash() {
     <div className='splash-parent'>
       <div className='splash-child'>
         <header><b>Close</b>Buy</header>
-        <i className="fas fa-couch"></i>
+        <img className='splash-logo' src={logo} alt='' ></img>
       </div>      
     </div>
   );

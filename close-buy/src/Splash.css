@@ -4,7 +4,7 @@ body {
 
 header {
   text-align: center;
-  color: rgb(100,150,150);
+  color: rgb(74,159,242);
 
 }
 
@@ -17,6 +17,15 @@ header {
 }
 .splash-child{
   color: rgb(100, 150, 150);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-logo{
+  max-width: 40vw;
+  height: auto;
 }
 
 /* 
@@ -29,8 +38,4 @@ sure
 header{
   font-size: 10vw;
   width:100%;
-}
-
-.fa-couch {
-  font-size: 40vw;
 }
