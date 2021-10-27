@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
 import Search from './Search';
-import Navbar from './Navbar';
+import Navbar from './Navbar';\
 import ProductCard from './ProductCard';
 
 function App() {
+  const [ queryTerm, setQueryTerm ] = useState("");
 
-  // const fetchData = () => {
-  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log("Full response data --- ", response.data) // The entire response from the API
-  //     console.log("Response data message --- ", response.data.message) // Just the message
-  //   }) 
-  // }
+  // Provides search term string from Search.jsx
+  function saveFn(searchTerm) {
+    setQueryTerm(searchTerm)
+  };
+
+  // Function queries craigslist with search term string.
+  const craigslistData = (queryTerm) => {
+    const url = `api/products/craigslist?q=${queryTerm}`;
+
+
+    axios.get(url)
+    .then((response) => {
+      console.log("Craigslist data example", response.data);
+    })
+  };
+
+  // Run function once queryterm has been saved.
+  useEffect(() => {
+    craigslistData(queryTerm)
+  }, [queryTerm]);
 
   return (
     <div>
       <Navbar />
       {/* <Splash /> */}
-      <Search />
+      <Search onSave={saveFn} />
       {/* <Categories /> */}
       <ProductCard />
       {/* <Category productArray={productArray} /> */}
