@@ -13,13 +13,13 @@
    - [ ] 
 
 ## Desktop Wire Frame
-![desktop wireframe]('https://github.com/kgrayallday/closebuy/blob/development/Planning/wire-desktop.png?raw=true')
+![desktop wireframe](https://github.com/kgrayallday/closebuy/blob/development/Planning/wire-desktop.png?raw=true)
 
 ## Mobile Wire Frame
-![mobile wireframe]('https://github.com/kgrayallday/closebuy/blob/development/Planning/wire-mobile.png?raw=true')
+![mobile wireframe](https://github.com/kgrayallday/closebuy/blob/development/Planning/wire-mobile.png?raw=true)
 
 ## Entity Relationship Diagram 
-![ERD]('https://github.com/kgrayallday/closebuy/blob/development/Planning/ERD-10.22.21.png?raw=true')
+![ERD](https://github.com/kgrayallday/closebuy/blob/development/Planning/ERD-10.22.21.png?raw=true)
 
 ## Main User Stories
 
