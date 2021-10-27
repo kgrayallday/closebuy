@@ -123,3 +123,22 @@ product = [
     post_date: '10/22/2021'
   }
 ];
+
+// .....................
+// Helper functions start here 
+// .....................
+
+// Function will filter API response data and return a new array of objects that include the filter category.
+const filterData = function(data, category) {
+  const results = []; 
+  const newData = [...data];
+
+   newData.forEach((element) => {
+     if (element.category === category) {
+       results.push(element)
+     }
+   })
+   return results;
+};
+
+console.log(filterData(product, "yellow"));
