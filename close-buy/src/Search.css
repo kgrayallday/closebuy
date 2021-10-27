@@ -8,13 +8,15 @@
   display: flex;
   flex-direction: row;
   justify-content:center ;
+  height: 100%;
 }
 .surf-field {
   width: 60%;
   padding: 10px 35px 10px 15px;
   color:white;
   font-weight: 900;
-  background-color: blueviolet;
+  font-size: 1.5em;
+  background-color: rgb(117, 169, 249);
   border: none;
   border-radius: 100px;
   outline: none;
@@ -22,14 +24,16 @@
 
 input::placeholder {
   color: white;
+  font-size: 1.1em;
 }
 
 .surf-button {
   background: transparent;
   border: none;
   outline: none;
-  margin-top: 5px;
-  margin-left: -40px;
+  margin-top: 0px;
+  margin-left: -45px;
+  font-size: 1.2em;
 }
 
 .surf-button i {
