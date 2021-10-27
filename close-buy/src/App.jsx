@@ -4,6 +4,7 @@ import './App.css';
 import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
+import ProductCard from './ProductCard';
 
 function App() {
   const [ queryTerm, setQueryTerm ] = useState("");
@@ -16,6 +17,7 @@ function App() {
   // Function queries craigslist with search term string.
   const craigslistData = (queryTerm) => {
     const url = `api/products/craigslist?q=${queryTerm}`;
+
 
     axios.get(url)
     .then((response) => {
@@ -34,7 +36,9 @@ function App() {
       {/* <Splash /> */}
       <Search onSave={saveFn} />
       {/* <Categories /> */}
-      {/* <Category /> */}
+      <ProductCard />
+      {/* <Category productArray={productArray} /> */}
+
     </div>
   );
 }
