@@ -128,8 +128,8 @@ product = [
 // Helper functions start here 
 // .....................
 
-// Function will filter API response data and return a new array of objects that include the filter category.
-const filterData = function(data, category) {
+// Function will filter API response data and return an array of objects that include the filter category.
+export function filterData(data, category) {
   const results = []; 
   const newData = [...data];
 
@@ -140,5 +140,3 @@ const filterData = function(data, category) {
    })
    return results;
 };
-
-console.log(filterData(product, "yellow"));

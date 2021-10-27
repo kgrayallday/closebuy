@@ -5,6 +5,11 @@ import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
+import { filterData } from 'helpers/selectors';
+
+//  ************************************
+// Main application component starts here
+//  ************************************
 
 function App() {
   const [ queryTerm, setQueryTerm ] = useState("");
