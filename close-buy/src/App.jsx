@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 import { filterData } from './helpers/selectors';
 
 
-// Testing Data **********
+// Testing Data ********** Remove once API is working.
 const product = [
   {
     domain_id: 1098,
@@ -162,7 +162,7 @@ function App() {
       console.log("Response equals", response.data);
       console.log("The API state date equals....", state.apiData);
     })
-  }
+  };
 
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
   useEffect(() => {
@@ -174,7 +174,7 @@ function App() {
   const greenProducts = greenData.map((listing) => {
 
     return (
-      <ProductCard 
+      <ProductCard
       key={listing.domain_id}
       id={listing.domain_id}
       title={listing.title}
