@@ -17,26 +17,40 @@ function App() {
     apiData: []
   });
 
-  // Provides search term string from Search.jsx
+  // Provides search term string from Search.jsx & updates state.
   function saveFn(searchTerm) {
     const queryTerm = searchTerm
     setState(prev => ({...prev, queryTerm}))
   };
 
-  // Function queries craigslist with search term string.
-  const craigslistData = (term) => {
-    const url = `api/products/craigslist?q=${term}`;
-
+  // [] within useEffect states this will cleanUp once a search term has been entered by user.
+  useEffect(() => {
+    // const url = `api/products/${state.queryTerm}`; // Will change to one close-buy-server endpoint.
+    
     axios.get(url)
     .then((response) => {
       console.log("Craigslist data example", response.data);
     })
-  };
+  }, []); // Array is blank so request is only asked once. Add a state change in here to use axios.get.
 
-  // Run function once queryterm has been saved.
-  useEffect(() => {
-    craigslistData(state.queryTerm)
-  }, [state.queryTerm]);
+  // Example filterfunction for API response from ./helpers
+  const greenData = filterData(state.apiData, "green");
+  const greenCategory = greenData.map((listing) => {
+
+    return (
+      <Category 
+      key={listing.domain_id}
+      id={listing.domain_id}
+      title={listing.title}
+      description={listing.description}
+      url={listing.url}
+      images={listing.images}
+      price={listing.price}
+      category={listing.category}
+      />
+    )
+  });
+
 
   return (
     <div>
