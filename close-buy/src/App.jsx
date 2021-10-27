@@ -169,23 +169,27 @@ function App() {
     fetchData();
   }, [state.queryTerm]);
 
+  // const blueProducts = blueData.map((listing) => {
+
   // Example filterfunction for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
-  const greenProducts = greenData.map((listing) => {
+  const blueData = filterData(state.apiData, "blue");
+  const yellowData = filterData(state.apiData, "yellow");
 
-    return (
-      <ProductCard
-      key={listing.domain_id}
-      id={listing.domain_id}
-      title={listing.title}
-      description={listing.description}
-      url={listing.url}
-      images={listing.images}
-      price={listing.price}
-      category={listing.category}
-      />
-    )
-  });
+  const renderProducts = (array) => array.map((listing) => {
+      return (
+        <ProductCard
+        key={listing.domain_id}
+        id={listing.domain_id}
+        title={listing.title}
+        description={listing.description}
+        url={listing.url}
+        images={listing.images}
+        price={listing.price}
+        category={listing.category}
+        />
+      )
+    });
 
 
   return (
@@ -194,9 +198,13 @@ function App() {
       {/* <Splash /> */}
       <Search onSave={saveFn} />
       {/* <Categories /> */}
-      <ProductCard />
+      <h2>Green Products</h2>
+      {renderProducts(greenData)}
       {/* <Category productArray={productArray} /> */}
-
+      <h2>Blue Products</h2>
+      {renderProducts(blueData)}
+      <h2>Yellow Products</h2>
+      {renderProducts(yellowData)}
     </div>
   );
 }
