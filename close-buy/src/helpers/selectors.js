@@ -1,7 +1,7 @@
 
 
 // Testing driver object mimics API response 
-product = [
+const product = [
   {
     domain_id: 1098,
     domain: 'craigslist',

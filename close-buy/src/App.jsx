@@ -5,24 +5,27 @@ import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
-import { filterData } from 'helpers/selectors';
+import { filterData } from './helpers/selectors';
 
 //  ************************************
 // Main application component starts here
 //  ************************************
 
 function App() {
-  const [ queryTerm, setQueryTerm ] = useState("");
+  const [ state, setState ] = useState({
+    queryTerm: "",
+    apiData: []
+  });
 
   // Provides search term string from Search.jsx
   function saveFn(searchTerm) {
-    setQueryTerm(searchTerm)
+    const queryTerm = searchTerm
+    setState(prev => ({...prev, queryTerm}))
   };
 
   // Function queries craigslist with search term string.
-  const craigslistData = (queryTerm) => {
-    const url = `api/products/craigslist?q=${queryTerm}`;
-
+  const craigslistData = (term) => {
+    const url = `api/products/craigslist?q=${term}`;
 
     axios.get(url)
     .then((response) => {
@@ -32,8 +35,8 @@ function App() {
 
   // Run function once queryterm has been saved.
   useEffect(() => {
-    craigslistData(queryTerm)
-  }, [queryTerm]);
+    craigslistData(state.queryTerm)
+  }, [state.queryTerm]);
 
   return (
     <div>
