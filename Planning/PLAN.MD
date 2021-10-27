@@ -62,7 +62,14 @@
 ## Major Retailers
  - google shop REST api? 
 
-# email
+## email
  - possibly use mail chimp
  - how hard would it be to use/make our own mail server (nodemailer?)
    - talked to mentor... its hard.
+
+# Design
+## Logo Designs
+### Colour Exploration
+![splash mobile logo](splash-logo-10.22.21.png)
+
+![fancy logo screenshot](fancy-logo-10.25.21.png)
