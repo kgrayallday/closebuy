@@ -6,31 +6,6 @@ import Search from './Search';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 
-/* possible different color schemes */
-// const themes = {
-//   pinkBlue: {
-//     primary: 'pink',
-//     secondary: 'blue'
-//   },
-//   pinkTeal: {
-//     primary: 'pink',
-//     secondary: 'teal'
-//   },
-//   bluePink: {
-//     primary: 'blue',
-//     secondary: 'pink'
-//   },
-//   yellowOrange: {
-//     primary: 'yellow',
-//     secondary: 'orange'
-//   },
-  
-// }
-
-const currentTheme = themes.pinkTeal;
-
-const _testShowSplash = true;
-
 function App() {
 
   // const fetchData = () => {
