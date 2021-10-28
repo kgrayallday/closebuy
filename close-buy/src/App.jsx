@@ -30,10 +30,7 @@ const product = [
     domain: 'craigslist',
     category: 'green',
     url: 'http://theurl.com',
-    images: [
-        "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-        "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-    ],
+    images: [],
     location: '(Port Moody tricities/pitt/maple )',
     price: 500,
     description: 'this is the desc',
@@ -169,8 +166,6 @@ function App() {
     fetchData();
   }, [state.queryTerm]);
 
-  // const blueProducts = blueData.map((listing) => {
-
   // Example filterfunction for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
   const blueData = filterData(state.apiData, "blue");
@@ -187,10 +182,10 @@ function App() {
         images={listing.images}
         price={listing.price}
         category={listing.category}
+        domain={listing.domain}
         />
       )
     });
-
 
   return (
     <div>
