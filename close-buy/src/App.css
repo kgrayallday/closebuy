@@ -5,6 +5,10 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+*{
+  box-sizing:border-box;
+}
+
 :root {
   --background-color: rgb(252, 197, 206);
 }
