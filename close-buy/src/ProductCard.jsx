@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, Switch, Route } from 'react-router-dom';
+import ProductView from './components/ProductView';
 import './ProductCard.css';
 
 function ProductCard(props) {
@@ -24,9 +26,13 @@ function ProductCard(props) {
         />}
         <div className="product_container__description__text">
           <h2>{title}</h2>
+          <Link to={`/product/${id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
           <button>Product View</button>
+          </Link>
         </div>
       </div>
+
+
     </div>
 
   );

@@ -7,6 +7,7 @@ import Search from './Search';
 import Navbar from './Navbar';
 import About from './components/About';
 import ProductCard from './ProductCard';
+import ProductView from './components/ProductView';
 import { filterData } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -217,9 +218,13 @@ function App() {
       {/* <Category productArray={productArray} /> */}
 
       <Switch>
-        
+
         <Route path="/about">
           <About />
+        </Route>
+
+        <Route path={`/product/:id`}>
+          <ProductView />
         </Route>
 
         <Route path="/">
