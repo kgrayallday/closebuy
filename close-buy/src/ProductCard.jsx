@@ -24,7 +24,7 @@ function ProductCard(props) {
         />}
         <div className="product_container__description__text">
           <h2>{title}</h2>
-          <p>{description}</p>
+          <button>Product View</button>
         </div>
       </div>
     </div>
