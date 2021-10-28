@@ -6,6 +6,10 @@ import Search from './Search';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import { filterData } from './helpers/selectors';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 
 
 // Testing Data ********** Remove once API is working.
@@ -187,19 +191,43 @@ function App() {
       )
     });
 
+    const settings = {
+      className: 'slider',
+      infinite: true,
+      arrows: true,
+      centerMode: true,
+      centerPadding: '50px', /* 50px is default */
+      draggable: true, /* true is default */
+      lazyLoad: 'ondemand', /* ondemand or progressive - may be useful for many results */
+      /* responsive: - takes an array of breakpoints and settings */
+      slidesToShow: 3, /* currently not working, likely due to css */
+      autoplay: true,
+
+    }
+
   return (
     <div>
       <Navbar />
       {/* <Splash /> */}
       <Search onSave={saveFn} />
       {/* <Categories /> */}
+      
       <h2>Green Products</h2>
-      {renderProducts(greenData)}
+      <Slider {...settings} >
+        {renderProducts(greenData)}
+      </Slider>
+      
       {/* <Category productArray={productArray} /> */}
+      
       <h2>Blue Products</h2>
-      {renderProducts(blueData)}
+      <Slider {...settings} >
+        {renderProducts(blueData)}
+      </Slider>
+
       <h2>Yellow Products</h2>
-      {renderProducts(yellowData)}
+      <Slider {...settings}>
+        {renderProducts(yellowData)}
+      </Slider>
     </div>
   );
 }
