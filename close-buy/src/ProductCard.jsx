@@ -26,7 +26,10 @@ function ProductCard(props) {
         />}
         <div className="product_container__description__text">
           <h2>{title}</h2>
-          <Link to={`/product/${id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+          <Link to={{
+            pathname: `/product/${id}`,
+            props: { id, title, description, url, images, price, category, domain}}}
+            style={{ color: 'inherit', textDecoration: 'inherit'}}>
           <button>Product View</button>
           </Link>
         </div>
