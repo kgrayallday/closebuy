@@ -30,10 +30,7 @@ const product = [
     domain: 'craigslist',
     category: 'green',
     url: 'http://theurl.com',
-    images: [
-        "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-        "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-    ],
+    images: [],
     location: '(Port Moody tricities/pitt/maple )',
     price: 500,
     description: 'this is the desc',
@@ -171,22 +168,24 @@ function App() {
 
   // Example filterfunction for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
-  const greenProducts = greenData.map((listing) => {
+  const blueData = filterData(state.apiData, "blue");
+  const yellowData = filterData(state.apiData, "yellow");
 
-    return (
-      <ProductCard
-      key={listing.domain_id}
-      id={listing.domain_id}
-      title={listing.title}
-      description={listing.description}
-      url={listing.url}
-      images={listing.images}
-      price={listing.price}
-      category={listing.category}
-      />
-    )
-  });
-
+  const renderProducts = (array) => array.map((listing) => {
+      return (
+        <ProductCard
+        key={listing.domain_id}
+        id={listing.domain_id}
+        title={listing.title}
+        description={listing.description}
+        url={listing.url}
+        images={listing.images}
+        price={listing.price}
+        category={listing.category}
+        domain={listing.domain}
+        />
+      )
+    });
 
   return (
     <div>
@@ -194,9 +193,13 @@ function App() {
       {/* <Splash /> */}
       <Search onSave={saveFn} />
       {/* <Categories /> */}
-      <ProductCard />
+      <h2>Green Products</h2>
+      {renderProducts(greenData)}
       {/* <Category productArray={productArray} /> */}
-
+      <h2>Blue Products</h2>
+      {renderProducts(blueData)}
+      <h2>Yellow Products</h2>
+      {renderProducts(yellowData)}
     </div>
   );
 }
