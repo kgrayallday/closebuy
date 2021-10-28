@@ -5,6 +5,7 @@ import './App.css';
 import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
+import About from './components/About';
 import ProductCard from './ProductCard';
 import { filterData } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
@@ -216,26 +217,30 @@ function App() {
       {/* <Category productArray={productArray} /> */}
 
       <Switch>
-        <Route path="/">
-
-        <Search onSave={saveFn} />
-
-        <h2>Green Products</h2>
-        <Slider {...settings} >
-            {renderProducts(greenData)}
-        </Slider>
-
-        <h2>Blue Products</h2>
-        <Slider {...settings} >
-        {renderProducts(blueData)}
-        </Slider>
-
-        <h2>Yellow Products</h2>
-        <Slider {...settings}>
-          {renderProducts(yellowData)}
-        </Slider>
-      
+        
+        <Route path="/about">
+          <About />
         </Route>
+
+        <Route path="/">
+          <Search onSave={saveFn} />
+
+          <h2>Green Products</h2>
+          <Slider {...settings} >
+            {renderProducts(greenData)}
+          </Slider>
+
+          <h2>Blue Products</h2>
+          <Slider {...settings} >
+            {renderProducts(blueData)}
+          </Slider>
+
+          <h2>Yellow Products</h2>
+          <Slider {...settings}>
+            {renderProducts(yellowData)}
+          </Slider>
+        </Route>
+      
       </Switch>
 
       </Router>
