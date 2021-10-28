@@ -143,6 +143,12 @@ function App() {
 
   const [ loading, setLoading ] = useState(true);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000)
+  })
+
   const [ state, setState ] = useState({
     queryTerm: "",
     apiData: []
@@ -210,27 +216,27 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      {/* <Splash /> */}
-      <Search onSave={saveFn} />
-      {/* <Categories /> */}
-      
-      <h2>Green Products</h2>
-      <Slider {...settings} >
-        {renderProducts(greenData)}
-      </Slider>
-      
-      {/* <Category productArray={productArray} /> */}
-      
-      <h2>Blue Products</h2>
-      <Slider {...settings} >
-        {renderProducts(blueData)}
-      </Slider>
-
-      <h2>Yellow Products</h2>
-      <Slider {...settings}>
-        {renderProducts(yellowData)}
-      </Slider>
+      { loading === false ? (
+        <div>
+          <Navbar />
+          <Search onSave={saveFn} />
+          
+          <h2>Green Products</h2>
+            <Slider {...settings} >
+              {renderProducts(greenData)}
+            </Slider>
+          
+          <h2>Blue Products</h2>
+            <Slider {...settings} >
+              {renderProducts(blueData)}
+            </Slider>
+    
+          <h2>Yellow Products</h2>
+            <Slider {...settings}>
+              {renderProducts(yellowData)}
+            </Slider>
+        </div>
+      ):(<Splash />)}
     </div>
   );
 }
