@@ -15,6 +15,8 @@ function ProductView() {
     <span></span>
     <li>{location.props.id}</li>
     <li>{location.props.title}</li>
+    <li>{location.props.domain}</li>
+    <li>{location.props.url}</li>
     <li>{location.props.description}</li>
     <li>{location.props.category}</li>
     <li>{location.props.images}</li>
