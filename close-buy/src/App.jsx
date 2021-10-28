@@ -6,6 +6,10 @@ import Search from './Search';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import { filterData } from './helpers/selectors';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 
 
 // Testing Data ********** Remove once API is working.
@@ -30,10 +34,7 @@ const product = [
     domain: 'craigslist',
     category: 'green',
     url: 'http://theurl.com',
-    images: [
-        "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-        "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-    ],
+    images: [],
     location: '(Port Moody tricities/pitt/maple )',
     price: 500,
     description: 'this is the desc',
@@ -101,7 +102,7 @@ const product = [
     post_date: '10/22/2021'
   },
   {
-    domain_id: 112233,
+    domain_id: 33333,
     domain: 'ebay',
     category: 'blue',
     url: 'http://theurl.com',
@@ -174,22 +175,38 @@ function App() {
 
   // Example filterfunction for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
-  const greenProducts = greenData.map((listing) => {
+  const blueData = filterData(state.apiData, "blue");
+  const yellowData = filterData(state.apiData, "yellow");
 
-    return (
-      <ProductCard
-      key={listing.domain_id}
-      id={listing.domain_id}
-      title={listing.title}
-      description={listing.description}
-      url={listing.url}
-      images={listing.images}
-      price={listing.price}
-      category={listing.category}
-      />
-    )
-  });
+  const renderProducts = (array) => array.map((listing) => {
+      return (
+        <ProductCard
+        key={listing.domain_id}
+        id={listing.domain_id}
+        title={listing.title}
+        description={listing.description}
+        url={listing.url}
+        images={listing.images}
+        price={listing.price}
+        category={listing.category}
+        domain={listing.domain}
+        />
+      )
+    });
 
+    const settings = {
+      className: 'slider',
+      infinite: true,
+      arrows: true,
+      centerMode: true,
+      centerPadding: '50px', /* 50px is default */
+      draggable: true, /* true is default */
+      lazyLoad: 'ondemand', /* ondemand or progressive - may be useful for many results */
+      /* responsive: - takes an array of breakpoints and settings */
+      slidesToShow: 3, /* currently not working, likely due to css */
+      autoplay: true,
+
+    }
 
   return (
     <div>
@@ -197,9 +214,23 @@ function App() {
       {/* <Splash /> */}
       <Search onSave={saveFn} />
       {/* <Categories /> */}
-      <ProductCard />
+      
+      <h2>Green Products</h2>
+      <Slider {...settings} >
+        {renderProducts(greenData)}
+      </Slider>
+      
       {/* <Category productArray={productArray} /> */}
+      
+      <h2>Blue Products</h2>
+      <Slider {...settings} >
+        {renderProducts(blueData)}
+      </Slider>
 
+      <h2>Yellow Products</h2>
+      <Slider {...settings}>
+        {renderProducts(yellowData)}
+      </Slider>
     </div>
   );
 }
