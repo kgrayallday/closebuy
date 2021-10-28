@@ -139,6 +139,9 @@ const product = [
 //  ************************************
 
 function App() {
+
+  const [ loading, setLoading ] = useState(true);
+
   const [ state, setState ] = useState({
     queryTerm: "",
     apiData: []
