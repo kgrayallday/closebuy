@@ -218,13 +218,20 @@ function App() {
       {/* <Category productArray={productArray} /> */}
 
       <Switch>
-
         <Route path="/about">
           <About />
         </Route>
 
         <Route path="/product/category/green">
           {renderProducts(greenData)}
+        </Route>
+
+        <Route path="/product/category/blue">
+          {renderProducts(blueData)}
+        </Route>
+
+        <Route path="/product/category/yellow">
+          {renderProducts(yellowData)}
         </Route>
 
         <Route path={`/product/:id`}>
@@ -241,17 +248,20 @@ function App() {
             {renderProducts(greenData)}
           </Slider>
 
-          <h2>Blue Products</h2>
+          <Link to={"/product/category/blue"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            <h2>Blue Products</h2>
+          </Link>
           <Slider {...settings} >
             {renderProducts(blueData)}
           </Slider>
 
-          <h2>Yellow Products</h2>
+          <Link to={"/product/category/yellow"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            <h2>Yellow Products</h2>
+          </Link>
           <Slider {...settings}>
             {renderProducts(yellowData)}
           </Slider>
         </Route>
-      
       </Switch>
 
       </Router>
