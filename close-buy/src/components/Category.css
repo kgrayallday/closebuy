@@ -1,0 +1,36 @@
+body {
+  background-color: rgb(252, 197, 206);
+}
+
+header {
+  text-align: center;
+  color: rgb(100,150,150);
+
+}
+
+.category-parent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+}
+.category-child{
+  color: rgb(100, 150, 150);
+}
+
+/* 
+percent of view width when you are inside a div/container
+that is not the body, the contents in the div will scale
+the vw since this is a percentage calculation, why the two
+font sized below have to be different (10 vs 40) i am not
+sure 
+*/
+header{
+  font-size: 10vw;
+  width:100%;
+}
+
+.fa-couch {
+  font-size: 40vw;
+}

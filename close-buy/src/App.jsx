@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
@@ -7,6 +7,7 @@ import Search from './Search';
 import Navbar from './Navbar';
 import About from './components/About';
 import CategoryButton from './components/CategoryButton';
+import Category from './components/Category';
 import ProductCard from './ProductCard';
 import ProductView from './components/ProductView';
 import { filterData } from './helpers/selectors';
@@ -215,8 +216,6 @@ function App() {
 
       <Navbar />
       {/* <Splash /> */}
-      {/* <Categories /> */}
-      {/* <Category productArray={productArray} /> */}
 
       <Switch>
         <Route path="/about">
@@ -224,7 +223,7 @@ function App() {
         </Route>
 
         <Route path="/product/category/green">
-          {renderProducts(greenData)}
+          <Category />
         </Route>
 
         <Route path="/product/category/blue">
