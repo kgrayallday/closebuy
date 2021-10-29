@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
@@ -223,6 +223,10 @@ function App() {
           <About />
         </Route>
 
+        <Route path="/product/category/green">
+          {renderProducts(greenData)}
+        </Route>
+
         <Route path={`/product/:id`}>
           <ProductView />
         </Route>
@@ -230,7 +234,9 @@ function App() {
         <Route path="/">
           <Search onSave={saveFn} />
 
-          <h2>Green Products</h2>
+          <Link to={"/product/category/green"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            <h2>Green Products</h2>
+          </Link>
           <Slider {...settings} >
             {renderProducts(greenData)}
           </Slider>
