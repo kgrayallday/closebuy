@@ -6,6 +6,7 @@ import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
 import About from './components/About';
+import CategoryButton from './components/CategoryButton';
 import ProductCard from './ProductCard';
 import ProductView from './components/ProductView';
 import { filterData } from './helpers/selectors';
@@ -241,23 +242,17 @@ function App() {
         <Route path="/">
           <Search onSave={saveFn} />
 
-          <Link to={"/product/category/green"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-            <h2>Green Products</h2>
-          </Link>
+          <CategoryButton linkTerm={"green"}/>
           <Slider {...settings} >
             {renderProducts(greenData)}
           </Slider>
 
-          <Link to={"/product/category/blue"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-            <h2>Blue Products</h2>
-          </Link>
+          <CategoryButton linkTerm={"blue"}/>
           <Slider {...settings} >
             {renderProducts(blueData)}
           </Slider>
 
-          <Link to={"/product/category/yellow"} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-            <h2>Yellow Products</h2>
-          </Link>
+          <CategoryButton linkTerm={"yellow"}/>
           <Slider {...settings}>
             {renderProducts(yellowData)}
           </Slider>
