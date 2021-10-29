@@ -39,7 +39,7 @@ function ProductCard(props) {
               src="https://www.kindpng.com/picc/m/559-5595091_craigslist-centralized-network-of-online-communities-logo-hd.png"
               alt="domain"
             />
-          )}{domain === "kujiji" && (
+          )}{domain === "kijiji" && (
             <img
               src="https://www.techjunkie.com/wp-content/uploads/2019/05/kijiji-logo.png"
               alt="domain"
