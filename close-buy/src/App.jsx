@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
+import About from './components/About';
 import ProductCard from './ProductCard';
+import ProductView from './components/ProductView';
 import { filterData } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -207,27 +210,45 @@ function App() {
 
   return (
     <div>
+      <Router>
+
       <Navbar />
       {/* <Splash /> */}
-      <Search onSave={saveFn} />
       {/* <Categories /> */}
-      
-      <h2>Green Products</h2>
-      <Slider {...settings} >
-        {renderProducts(greenData)}
-      </Slider>
-      
       {/* <Category productArray={productArray} /> */}
-      
-      <h2>Blue Products</h2>
-      <Slider {...settings} >
-        {renderProducts(blueData)}
-      </Slider>
 
-      <h2>Yellow Products</h2>
-      <Slider {...settings}>
-        {renderProducts(yellowData)}
-      </Slider>
+      <Switch>
+
+        <Route path="/about">
+          <About />
+        </Route>
+
+        <Route path={`/product/:id`}>
+          <ProductView />
+        </Route>
+
+        <Route path="/">
+          <Search onSave={saveFn} />
+
+          <h2>Green Products</h2>
+          <Slider {...settings} >
+            {renderProducts(greenData)}
+          </Slider>
+
+          <h2>Blue Products</h2>
+          <Slider {...settings} >
+            {renderProducts(blueData)}
+          </Slider>
+
+          <h2>Yellow Products</h2>
+          <Slider {...settings}>
+            {renderProducts(yellowData)}
+          </Slider>
+        </Route>
+      
+      </Switch>
+
+      </Router>
     </div>
   );
 }
