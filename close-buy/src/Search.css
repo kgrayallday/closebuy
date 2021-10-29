@@ -1,0 +1,44 @@
+.search {
+  margin: 60px auto;
+  width: 500px;
+  height: 60px
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content:center ;
+  height: 100%;
+}
+.surf-field {
+  width: 60%;
+  padding: 10px 35px 10px 15px;
+  color:white;
+  font-weight: 900;
+  font-size: 1.5em;
+  background-color: rgb(117, 169, 249);
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+
+input::placeholder {
+  color: white;
+  font-size: 1.1em;
+}
+
+.surf-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 0px;
+  margin-left: -45px;
+  font-size: 1.2em;
+}
+
+.surf-button i {
+  color: white;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
