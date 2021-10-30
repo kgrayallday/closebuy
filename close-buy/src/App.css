@@ -6,7 +6,8 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 :root {
-  --background-color: rgb(252, 197, 206);
+  --bg-pink: rgb(252, 197, 206);
+  --fg-blue: rgb(117, 169, 249);
 }
 
 .App {
