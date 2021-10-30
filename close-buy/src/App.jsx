@@ -9,7 +9,6 @@ import About from './components/About';
 import ProductCard from './components/ProductCard';
 import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
-import ProductCard from './ProductCard';
 import ProductView from './components/ProductView';
 import { filterData } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
