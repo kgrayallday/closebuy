@@ -25,7 +25,7 @@ function ProductCard(props) {
           <i class="fas fa-thumbtack"></i>
         </div>
         <div className="fav_pin_sel">
-          <i class="fas fa-thumbtack"></i>
+          <i className="fas fa-thumbtack"></i>
         </div>
 
         <Link
