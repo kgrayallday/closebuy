@@ -156,17 +156,14 @@ function App() {
     setState(prev => ({...prev, queryTerm}))
   };
 
+  // Main axios data function
   const fetchData = function() {
-    // const url = `api/products/${state.queryTerm}`; // Will change to one close-buy-server endpoint.
-    const url = 'api/data'
+    const url = `api/products?q=${state.queryTerm}`;
+    
     axios.get(url)
     .then((response) => {
-      //  const apiData = response.data;
-      //  setState(prev => ({...prev, apiData }));
-      const apiData = product;
-      setState(prev => ({...prev, apiData }));
-      console.log("Response equals", response.data);
-      console.log("The API state date equals....", state.apiData);
+       const apiData = response.data;
+       setState(prev => ({...prev, apiData }));
     })
   };
 
