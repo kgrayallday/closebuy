@@ -13,38 +13,42 @@ function ProductView() {
   console.log("Product params", params) // debuggin to check url params
   console.log("Current state", location.props) // debuggin to check location.props
 
-  const settings = {
+  const productSettings = {
     className: 'product-slider',
     infinite: false,
     arrows: true,
+    dots: true,
     centerMode: true,
-    centerPadding: '50px', /* 50px is default */
+    centerPadding: '20px', /* 50px is default */
     draggable: true, /* true is default */
-    lazyLoad: 'ondemand', /* ondemand or progressive - may be useful for many results */
     /* responsive: - takes an array of breakpoints and settings */
     slidesToShow: 1, /* currently not working, likely due to css */
-    autoplay: false,
+    slidesToScroll: 1,
   }
+
+  const imagesArray = location.props.images.map((url, index) => {
+    return <img key={index} src={url} className='product-image' alt='product'></img>
+  })
 
   return(
     <div>
-      <h2>Product View #{params.id}</h2>
+      <h2 className='pf-h2'>Product {params.id}</h2>
       <div className='product-container'>
-        <Slider {...settings}>
-          <div className='product-img-container'>
-            <img className='product-image' alt='product' src={location.props.images[0]}></img>
+          
+          <Slider {...productSettings}>
+              {imagesArray}
+          </Slider>
+
+          <div className='pf-description'>
+            <div className='pf-desc-item pf-desc-title'>{location.props.title}</div>
+            <div className='pf-desc-item pf-desc-domain'>{location.props.domain}</div>
+            <div className='pf-desc-item pf-desc-url'>{location.props.url}</div>
+            <div className='pf-desc-item pf-desc-desc'>{location.props.description}</div>
+            <div className='pf-desc-item pf-desc-category'>{location.props.category}</div>
+            <div className='pf-desc-item pf-desc-id'>{location.props.id}</div>
           </div>
-        </Slider>
-        <div className='product-description'>
-          <li>{location.props.id}</li>
-          <li>{location.props.title}</li>
-          <li>{location.props.domain}</li>
-          <li>{location.props.url}</li>
-          <li>{location.props.description}</li>
-          <li>{location.props.category}</li>
+
         </div>
-        
-      </div>
     </div>
     
   );
