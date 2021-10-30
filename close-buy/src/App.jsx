@@ -6,6 +6,8 @@ import Splash from './Splash';
 import Search from './Search';
 import Navbar from './Navbar';
 import About from './components/About';
+import CategoryButton from './components/CategoryButton';
+import Category from './components/Category';
 import ProductCard from './ProductCard';
 import ProductView from './components/ProductView';
 import { filterData } from './helpers/selectors';
@@ -214,13 +216,22 @@ function App() {
 
       <Navbar />
       {/* <Splash /> */}
-      {/* <Categories /> */}
-      {/* <Category productArray={productArray} /> */}
 
       <Switch>
-
         <Route path="/about">
           <About />
+        </Route>
+
+        <Route path="/product/category/green">
+          <Category listings={() => renderProducts(greenData)}/>
+        </Route>
+
+        <Route path="/product/category/blue">
+          <Category listings={() => renderProducts(blueData)}/>
+        </Route>
+
+        <Route path="/product/category/yellow">
+          <Category listings={() => renderProducts(yellowData)}/>
         </Route>
 
         <Route path={`/product/:id`}>
@@ -230,22 +241,21 @@ function App() {
         <Route path="/">
           <Search onSave={saveFn} />
 
-          <h2>Green Products</h2>
+          <CategoryButton linkTerm={"green"}/>
           <Slider {...settings} >
             {renderProducts(greenData)}
           </Slider>
 
-          <h2>Blue Products</h2>
+          <CategoryButton linkTerm={"blue"}/>
           <Slider {...settings} >
             {renderProducts(blueData)}
           </Slider>
 
-          <h2>Yellow Products</h2>
+          <CategoryButton linkTerm={"yellow"}/>
           <Slider {...settings}>
             {renderProducts(yellowData)}
           </Slider>
         </Route>
-      
       </Switch>
 
       </Router>
