@@ -93,7 +93,7 @@ function App() {
 
       <Navbar />
       {/* <Splash /> */}
-      {state.loading ? <Loading message={"....Loading Results!"} /> : <Redirect to="/" /> }
+      
 
       <Switch>
         <Route path="/loading">
@@ -125,7 +125,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Search onSave={saveFn} />
+        {state.loading ? <Loading message={".....Surfing!"} /> : <Search onSave={saveFn} /> }
 
           <CategoryButton linkTerm={"green"}/>
           <Slider {...settings} >

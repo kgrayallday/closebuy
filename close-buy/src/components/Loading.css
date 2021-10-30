@@ -6,11 +6,11 @@
   }
 
 .loading-image{
-  height: 5em;
-  margin-top: 10em;
-  margin-bottom: 10em;
-  margin-right: 2em;
-  animation: rotation 2s infinite linear;
+  height: 4em;
+  margin-top: 3.5em;
+  margin-bottom: 2.5em;
+  margin-right: 1em;
+  animation: rotation 1.5s infinite linear;
   }
 
 .loading__card-text--semi-bold{
