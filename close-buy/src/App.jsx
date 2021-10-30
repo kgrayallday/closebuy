@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Splash from './Splash';
+import Loading from './components/Loading';
 import Search from './Search';
 import Navbar from './Navbar';
 import About from './components/About';
@@ -215,6 +216,11 @@ function App() {
       {/* <Splash /> */}
 
       <Switch>
+
+        <Route path="/loading">
+          <Loading message={"....Loading Results!"}/>
+        </Route>
+
         <Route path="/about">
           <About />
         </Route>

@@ -1,0 +1,16 @@
+.loading__card--status{
+  background-color: rgb(252, 197, 206);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+.loading-image{
+  margin-right: 2rem;
+    animation: rotate 1s linear infinite;
+  }
+
+.loading__card-text--semi-bold{
+  font-weight: bold;
+  color: white;
+}
