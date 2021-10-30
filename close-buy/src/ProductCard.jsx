@@ -12,15 +12,9 @@ function ProductCard(props) {
   }
 
   return (
-    <Link
-      to={{ pathname: `/product/${id}`,
-        props: { id, title, description, url, images, price, category, domain }}}
-      style={{ color: "inherit", textDecoration: "inherit" }}
-    >
       <div
         className="product_container"
-        style={{ backgroundImage: `url(${images[0]})` }}
-      >
+        style={{ backgroundImage: `url(${images[0]})` }}>
         <div className="product_container__price">
           <span>
             <i className="fa-solid fa-dollar-sign"></i>
@@ -33,6 +27,11 @@ function ProductCard(props) {
         <div className="fav_pin_sel">
           <i class="fas fa-thumbtack"></i>
         </div>
+
+        <Link
+      to={{ pathname: `/product/${id}`,
+        props: { id, title, description, url, images, price, category, domain }}}
+      style={{ color: "inherit", textDecoration: "inherit" }}>
         <div className="product_container__description">
           {domain === "craigslist" && (
             <img
@@ -50,8 +49,10 @@ function ProductCard(props) {
             <h2>{title}</h2>
           </div>
         </div>
+        </Link>
+        
       </div>
-    </Link>
+    
   );
 }
 
