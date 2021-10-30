@@ -1,0 +1,18 @@
+.category_button {
+    background-color: rgb(117, 169, 249);
+    color: white;
+    border: 3.5px solid rgb(117, 169, 249);
+    border-radius: 25px;
+    padding: 1.5em;
+    width: 200px;
+    height: 20px;
+    font-weight: bold;
+    font-size: 1em;
+    transition-duration: 0.4s;
+    
+}
+
+.category_button:hover {
+  background-color: white; /* Green */
+  color: black;
+}
