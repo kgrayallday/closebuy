@@ -9,7 +9,7 @@ function Loading(props) {
       <img
         className="loading-image"
         src="images/loading.png"
-        alt="Loading"
+        alt="loading"
       />
       <h1 className="loading__card-text--semi-bold">{message}</h1>
     </main>

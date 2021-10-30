@@ -6,11 +6,23 @@
   }
 
 .loading-image{
-  margin-right: 2rem;
-    animation: rotate 1s linear infinite;
+  height: 5em;
+  margin-top: 10em;
+  margin-bottom: 10em;
+  margin-right: 2em;
+  animation: rotation 2s infinite linear;
   }
 
 .loading__card-text--semi-bold{
   font-weight: bold;
   color: white;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
