@@ -227,11 +227,11 @@ function App() {
         </Route>
 
         <Route path="/product/category/blue">
-          {renderProducts(blueData)}
+          <Category listings={() => renderProducts(blueData)}/>
         </Route>
 
         <Route path="/product/category/yellow">
-          {renderProducts(yellowData)}
+          <Category listings={() => renderProducts(yellowData)}/>
         </Route>
 
         <Route path={`/product/:id`}>
