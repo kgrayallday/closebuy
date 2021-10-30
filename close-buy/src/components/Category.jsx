@@ -1,14 +1,12 @@
 import React from 'react';
 import './Category.css';
 
-function Category() {
+function Category(props) {
+  const { listings } = props
 
   return (
     <div className='category-parent'>
-      <div className='category-child'>
-        <header><b>Close</b>Buy</header>
-        <i className="fas fa-couch"></i>
-      </div>      
+        {listings()}     
     </div>
   );
 }

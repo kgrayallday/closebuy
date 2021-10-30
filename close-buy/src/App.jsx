@@ -223,7 +223,7 @@ function App() {
         </Route>
 
         <Route path="/product/category/green">
-          <Category />
+          <Category listings={() => renderProducts(greenData)}/>
         </Route>
 
         <Route path="/product/category/blue">
