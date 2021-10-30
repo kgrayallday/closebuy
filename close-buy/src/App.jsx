@@ -9,7 +9,7 @@ import About from './components/About';
 import ProductCard from './components/ProductCard';
 import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
-import ProductView from './components/ProductView';
+import ProductFocus from './components/ProductFocus';
 import { filterData } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -232,7 +232,7 @@ function App() {
         </Route>
 
         <Route path={`/product/:id`}>
-          <ProductView />
+          <ProductFocus />
         </Route>
 
         <Route path="/">
