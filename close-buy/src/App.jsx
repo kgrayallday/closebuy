@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import Loading from './components/Loading';
 import Splash from './components/Splash';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
@@ -15,145 +16,22 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-
-
-// Testing Data ********** Remove once API is working.
-// const product = [
-//   {
-//     domain_id: 1098,
-//     domain: 'craigslist',
-//     category: 'green',
-//     url: 'http://theurl.com',
-//     images: [
-//         "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//         "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: '(Port Moody tricities/pitt/maple )',
-//     price: 700,
-//     description: 'this is the desc',
-//     title: 'Free Recliner Couch',
-//     post_date: '10/22/2021'
-//   },
-//   {
-//     domain_id: 1234,
-//     domain: 'craigslist',
-//     category: 'green',
-//     url: 'http://theurl.com',
-//     images: [],
-//     location: '(Port Moody tricities/pitt/maple )',
-//     price: 500,
-//     description: 'this is the desc',
-//     title: 'Couch',
-//     post_date: '10/22/2021'
-//   },
-//   {
-//     domain_id: 5678,
-//     domain: 'kujiji',
-//     category: 'green',
-//     url: 'http://theurl.com',
-//     images: [
-//       "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//       "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: 'vancouver',
-//     price: 800,
-//     description: 'this is the desc',
-//     title: 'Another Couch',
-//     post_date: '10/22/2021'
-//   },
-//   {
-//     domain_id: 111213,
-//     domain: 'kujiji',
-//     category: 'green',
-//     url: 'http://theurl.com',
-//     images: [
-//       "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//       "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: 'vancouver',
-//     price: 1000,
-//     description: 'this is the desc',
-//     title: 'Couch',
-//     post_date: '10/22/2021'
-//   },
-//   {
-//     domain_id: 112233,
-//     domain: 'etsy',
-//     category: 'blue',
-//     url: 'http://theurl.com',
-//     images: [
-//       "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//       "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: 'vancouver',
-//     price: 900,
-//     description: 'this is the desc',
-//     title: 'Another Couch',
-//     post_date: '10/22/2021'
-//   },
-//   {
-//     domain_id: 8765,
-//     domain: 'etsy',
-//     category: 'blue',
-//     url: 'http://theurl.com',
-//     images: [
-//       "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//       "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: 'vancouver',
-//     price: 1000,
-//     description: 'this is the desc',
-//     title: 'Another Couch',
-//     post_date: '10/22/2021'
-//   },
-//   {
-//     domain_id: 33333,
-//     domain: 'ebay',
-//     category: 'blue',
-//     url: 'http://theurl.com',
-//     images: [
-//       "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//       "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: 'vancouver',
-//     price: 90,
-//     description: 'this is the desc',
-//     title: 'Broken Couch',
-//     post_date: '10/22/2021'
-//   }, 
-//   {
-//     domain_id: 11000,
-//     domain: 'google',
-//     category: 'yellow',
-//     url: 'http://theurl.com',
-//     images: [
-//       "https://images.craigslist.org/00u0u_jtbfp6fBxlRz_0CI0t2_600x450.jpg", 
-//       "https://images.craigslist.org/00z0z_iF4jdUcxzYUz_0CI0t2_600x450.jpg"
-//     ],
-//     location: 'vancouver',
-//     price: 100,
-//     description: 'this is the desc',
-//     title: 'Another Couch',
-//     post_date: '10/22/2021'
-//   }
-// ];
-// ************************
-
-
 //  ************************************
 // Main application component starts here
 //  ************************************
 
 function App() {
   const [ state, setState ] = useState({
+    loading: false,
     queryTerm: "",
     apiData: []
   });
 
   // Provides search term string from Search.jsx & updates state.
   const saveFn = function(searchTerm) {
-    const queryTerm = searchTerm
-    setState(prev => ({...prev, queryTerm}))
+    const queryTerm = searchTerm;
+    const loading = true;
+    setState(prev => ({...prev, queryTerm, loading}))
   };
 
   // Main axios data function
@@ -163,7 +41,8 @@ function App() {
     axios.get(url)
     .then((response) => {
        const apiData = response.data;
-       setState(prev => ({...prev, apiData }));
+       const loading = false;
+       setState(prev => ({...prev, loading, apiData }))
     })
   };
 
@@ -177,6 +56,7 @@ function App() {
   const blueData = filterData(state.apiData, "blue");
   const yellowData = filterData(state.apiData, "yellow");
 
+  // Renders individual productCards with API response data.
   const renderProducts = (array) => array.map((listing) => {
       return (
         <ProductCard
@@ -213,8 +93,17 @@ function App() {
 
       <Navbar />
       {/* <Splash /> */}
+      
 
       <Switch>
+        <Route path="/loading">
+          <Loading message={"....Loading Results!"}/>
+        </Route>
+
+        <Route path="/splash">
+          <Splash />
+        </Route>
+
         <Route path="/about">
           <About />
         </Route>
@@ -236,7 +125,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Search onSave={saveFn} />
+        {state.loading ? <Loading message={".....Surfing!"} /> : <Search onSave={saveFn} /> }
 
           <CategoryButton linkTerm={"green"}/>
           <Slider {...settings} >
@@ -252,6 +141,7 @@ function App() {
           <Slider {...settings}>
             {renderProducts(yellowData)}
           </Slider>
+
         </Route>
       </Switch>
 
