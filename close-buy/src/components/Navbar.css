@@ -6,7 +6,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 15px;/* top-bottom left-right */ 
+  padding: 15px 15px;/* top-bottom left-right */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .center{
