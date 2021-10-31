@@ -34,5 +34,30 @@
 
 /* the parent */
 .slick-list {
-  margin: 0 -10px;
+  width: 100%;
+}
+
+.pf-slider .slick-list{
+  width:100%;
+  height: 100%;
+}
+
+.pf-slider .slick-list .slick-track{
+  height: 80vw;
+}
+
+.pf-slider .slick-list .slick-track .slick-slide{
+  width:auto;
+  object-fit: cover;
+}
+
+.pf-image img{
+  object-fit: cover;
+  height:40vw;
+  width: auto;
+  margin: 0 15%;
+}
+
+.pf-slider.slick-initialized{
+  height: 45vw;
 }
