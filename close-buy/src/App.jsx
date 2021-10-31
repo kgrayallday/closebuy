@@ -198,12 +198,10 @@ function App() {
       infinite: true,
       arrows: true,
       centerMode: true,
-      centerPadding: '50px', /* 50px is default */
+      centerPadding: '20px', /* 50px is default */
       draggable: true, /* true is default */
-      lazyLoad: 'ondemand', /* ondemand or progressive - may be useful for many results */
-      /* responsive: - takes an array of breakpoints and settings */
-      slidesToShow: 3, /* currently not working, likely due to css */
-      autoplay: true,
+      lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
+      slidesToShow: 4
 
     }
 
