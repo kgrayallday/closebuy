@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../img/closebuy-logo-white.png';
 import Login from './Login';
+import Favorites from './Favorites';
 
 function Navbar(props) {
   const { userId } = props;
@@ -24,6 +25,9 @@ function Navbar(props) {
       <div className="right">
         <Link to="/about" style={{ color: 'inherit', textDecoration: 'inherit'}}>
           About
+        </Link>
+        <Link to="/favorites" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+          Favorites
         </Link>
         {!userId ? <button className="logout_button">Logout</button> : <Login />}
       </div>

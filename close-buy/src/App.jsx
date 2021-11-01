@@ -12,6 +12,7 @@ import ProductCard from './components/ProductCard';
 import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
 import ProductFocus from './components/ProductFocus';
+import Favorites from './components/Favorites';
 import { filterData } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -110,6 +111,10 @@ function App() {
 
         <Route path="/login">
           <Login />
+        </Route>
+
+        <Route path="/favorites">
+          <Favorites />
         </Route>
 
         <Route path="/product/category/green">
