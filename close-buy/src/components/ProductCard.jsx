@@ -3,13 +3,19 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 function ProductCard(props) {
-  const { id, title, description, url, images, price, category, domain } =
+  const { id, title, description, url, images, price, category, domain, saveFavourite } =
     props;
 
   // Example solution. If listing has zero images, push close-buy logo image or placeholder image into array.
   if (images.length === 0) {
     images.push("https://picsum.photos/400/600");
   }
+
+  // Servers up listing data to App.jsx to send a PUT request to Favourites DB.
+  const select = function() {
+    const listing = {id, title, description, url, images, price, categroy, domain}
+    saveFavourite(listing)
+  };
 
   return (
       <div className="product_container" style={{ backgroundImage: `url(${images[0]})` }}>
