@@ -7,6 +7,7 @@ import Splash from './components/Splash';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import Login from './components/Login';
 import ProductCard from './components/ProductCard';
 import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
@@ -24,6 +25,7 @@ function App() {
   const [ state, setState ] = useState({
     loading: false,
     queryTerm: "",
+    userId: 1,
     apiData: []
   });
 
@@ -89,7 +91,7 @@ function App() {
     <div>
       <Router>
 
-      <Navbar />
+      <Navbar userid={state.userId}/>
       {/* <Splash /> */}
       
 
@@ -104,6 +106,10 @@ function App() {
 
         <Route path="/about">
           <About />
+        </Route>
+
+        <Route path="/login">
+          <Login />
         </Route>
 
         <Route path="/product/category/green">
