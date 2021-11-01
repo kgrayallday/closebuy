@@ -13,7 +13,7 @@ function ProductCard(props) {
 
   // Servers up listing data to App.jsx to send a PUT request to Favourites DB.
   const select = function() {
-    const listing = {id, title, description, url, images, price, categroy, domain}
+    const listing = {id, title, description, url, images, price, category, domain}
     saveFavourite(listing)
   };
 
