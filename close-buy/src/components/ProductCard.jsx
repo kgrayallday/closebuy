@@ -26,7 +26,7 @@ function ProductCard(props) {
           <i class="fas fa-star"></i>
         </div>
         <div className="fav_pin_sel">
-          <i className="fas fa-star"></i>
+          <i className="fas fa-star" onClick={select}></i>
         </div>
 
         <Link 
