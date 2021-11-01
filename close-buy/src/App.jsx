@@ -27,6 +27,7 @@ function App() {
     loading: false,
     queryTerm: "",
     userId: 1,
+    favoritesData: [],
     apiData: []
   });
 
