@@ -38,6 +38,11 @@ function App() {
     setState(prev => ({...prev, queryTerm, loading}))
   };
 
+  // STRETCH - Function serves up Listing data to use via PUT to Server DB.
+  const saveFavourite = function(listingData) {
+    console.log("Saved Favorite listng data", listingData);
+  };
+
   // Main axios data function
   const fetchData = function() {
     const url = `api/products?q=${state.queryTerm}`;
@@ -50,7 +55,7 @@ function App() {
     })
   };
 
-  // Function retrives Favoruites listings via server-DB.
+  // STRETCH - Function retrives Favoruites listings via server-DB.
   const fetchFavorites = function () {
     const url = `api/favourites?userId=${state.userId}`
 
@@ -86,6 +91,7 @@ function App() {
         price={listing.price}
         category={listing.category}
         domain={listing.domain}
+        saveFavourite={saveFavourite}
         />
       )
     });
