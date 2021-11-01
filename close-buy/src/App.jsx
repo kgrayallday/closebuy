@@ -50,9 +50,22 @@ function App() {
     })
   };
 
+  // Function retrives Favoruites listings via server-DB.
+  const fetchFavorites = function () {
+    const url = `api/favourites?userId=${state.userId}`
+
+    axios.get(url)
+    .then((response) => {
+      const favoritesData = response.data;
+      setState(prev => ({...prev, favoritesData}))
+      console.log("Favorites Response data ....", favoritesData)
+    })
+  };
+
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
   useEffect(() => {
     fetchData();
+    fetchFavorites();
   }, [state.queryTerm]);
 
   // Example filterfunction for API response from ./helpers

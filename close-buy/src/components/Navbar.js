@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../img/closebuy-logo-white.png';
 import Login from './Login';
-import Favorites from './Favorites';
 
 function Navbar(props) {
   const { userId } = props;
