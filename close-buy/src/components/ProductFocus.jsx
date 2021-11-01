@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
-import './ProductView.css';
+import './ProductFocus.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -14,7 +14,7 @@ function ProductView() {
   console.log("Current state", location.props) // debuggin to check location.props
 
   const productSettings = {
-    className: 'product-slider',
+    className: 'pf-slider',
     infinite: false,
     arrows: true,
     dots: true,
@@ -27,7 +27,7 @@ function ProductView() {
   }
 
   const imagesArray = location.props.images.map((url, index) => {
-    return <img key={index} src={url} className='product-image' alt='product'></img>
+    return <div className='pf-image'><img key={index} src={url} className='pf-image' alt='product'></img></div>
   })
 
   return(

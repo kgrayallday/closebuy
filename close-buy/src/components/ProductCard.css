@@ -1,27 +1,28 @@
 .product_container {
-  background: url("https://picsum.photos/400/600");
+  /* background: url("https://picsum.photos/400/600"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
-  width: 350px;
-  height: 500px;
+  width: 20vw;
+  height: 30vw;
   position: relative;
   /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.315); */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 15px;
+  margin: 5vw 0;
 }
 .product_container .product_container__price {
   position: absolute;
   right: 0;
   left: 0;
-  bottom: 25%;
+  bottom: 22%;
   display: flex;
   align-items: flex-end;
   padding: 10px 10px 20px 10px;
   width: 30%;
   border-radius: 0px 50px 0px 0px;
   color: #000;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 1);
 }
 .product_container .product_container__price span {
   margin-right: 20px;
@@ -33,16 +34,19 @@
   background-color: #fff;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  height: 6vw;
   position: absolute;
   right: 0;
   left: 0;
   bottom: 0;
   border-radius: 0px 0px 15px 15px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .product_container .product_container__description img {
-  width: 60px;
-  height: 60px;
+  width: 5vw;
+  height: 5vw;
   border-radius: 50%;
   object-position: center;
   object-fit: cover;
@@ -50,8 +54,13 @@
 }
 .product_container .product_container__description h2 {
   color: #334454;
-  font-size: 1.2rem;
+  font-size: 1vw;
 }
+
+.product_container .product_container__description h2:hover {
+  color: #000;
+}
+
 .product_container .product_container__description p {
   color: #606060;
   font-size: 0.8rem;
