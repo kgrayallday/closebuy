@@ -53,8 +53,7 @@ function App() {
 
   // Main axios data function
   const fetchData = function() {
-    // const url = `api/products?q=${state.queryTerm}`;
-    const url = `api/products/craigslist?q=${state.queryTerm}`;
+    const url = `api/products?q=${state.queryTerm}`;
     
     axios.get(url)
     .then((response) => {
