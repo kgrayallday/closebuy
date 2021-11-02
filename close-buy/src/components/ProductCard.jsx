@@ -15,26 +15,34 @@ function ProductCard(props) {
     category,
     domain,
     favoritesData, 
-    saveFavourite } = props;
+    saveFavourite,
+    deleteFavorite } = props;
 
   // Example solution. If listing has zero images, push close-buy logo image or placeholder image into array.
   if (images.length === 0) {
     images.push("https://picsum.photos/400/600");
   }
 
-  // Servers up listing data to App.jsx to send a PUT request to Favourites DB.
+  // Serves up listing data to App.jsx to send a PUT request to Favourites DB.
   const select = function() {
     const listing = {id, title, description, url, images, price, category, domain}
     saveFavourite(listing)
   };
 
+  // Serves up listing data to App.jsx to send a Delete request to Favourites DB.
+  const deSelect = function() {
+    const listing = {id, title, description, url, images, price, category, domain}
+    deleteFavorite(listing)
+  };
+
+  // checks if id is listed in current favoritesData array. Renders star styling.
   useEffect(() => {
     if (findFavorite(favoritesData, id) === false) {
       setSelected(false);
     } else {
       setSelected(true);
     }
-  }, [select]);
+  }, [select, deSelect]);
 
 
   return (
@@ -42,9 +50,9 @@ function ProductCard(props) {
         <div className="product_container__price">
           <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
         </div>
-        <div className={selected ? 'fav_pin_sel' : 'fav_pin_unsel'}>
-          <i class="fas fa-star" onClick={select}></i>
-        </div>
+        {selected ? 
+        <div className='fav_pin_sel' ><i class="fas fa-star" onClick={deSelect}></i></div> : 
+        <div className='fav_pin_unsel'><i class="fas fa-star" onClick={select}></i></div>}
 
         <Link 
           to={{ pathname: `/product/${id}`,

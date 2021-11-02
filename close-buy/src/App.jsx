@@ -45,6 +45,10 @@ function App() {
     setState(prev => ({...prev, favoritesData}));
   };
 
+  const deleteFavorite = function(listingData) {
+    console.log("Deleting favorite!", listingData);
+  };
+
   // Main axios data function
   const fetchData = function() {
     // const url = `api/products?q=${state.queryTerm}`;
@@ -94,6 +98,7 @@ function App() {
         category={listing.category}
         domain={listing.domain}
         saveFavourite={saveFavourite}
+        deleteFavorite={deleteFavorite}
         favoritesData={state.favoritesData}
         />
       )
