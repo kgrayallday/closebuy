@@ -6,8 +6,8 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 :root {
-  --bg-color: rgb(252, 212, 252);
-  --fg-color: rgb(117, 169, 249);
+  --bg-color: #fcc5ce;
+  --fg-color: 75a9f9;
   height: 100vh;
 }
 
