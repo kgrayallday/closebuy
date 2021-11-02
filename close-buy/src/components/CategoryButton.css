@@ -1,7 +1,7 @@
 .category_button {
-    background-color: rgb(117, 169, 249);
+    background-color: var(--fg-color);
     color: white;
-    border: 3.5px solid rgb(117, 169, 249);
+    border: 3.5px solid var(--fg-color);
     border-radius: 25px;
     padding: 1vh;
     width: 20vw;

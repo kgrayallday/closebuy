@@ -13,7 +13,7 @@ function ProductView() {
   console.log("Product params", params) // debuggin to check url params
   console.log("Current state", location.props) // debuggin to check location.props
 
-  const productSettings = {
+  const pfSettings = {
     className: 'pf-slider',
     infinite: false,
     arrows: true,
@@ -35,7 +35,7 @@ function ProductView() {
       <h2 className='pf-h2'>{location.props.title} from {location.props.domain}</h2>
       <div className='product-container'>
           
-          <Slider {...productSettings}>
+          <Slider {...pfSettings}>
               {imagesArray}
           </Slider>
 
