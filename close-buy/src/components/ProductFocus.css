@@ -57,6 +57,7 @@
   height:40vw;
   width: auto;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .pf-slider.slick-initialized{

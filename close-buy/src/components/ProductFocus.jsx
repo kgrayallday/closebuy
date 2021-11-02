@@ -32,7 +32,7 @@ function ProductView() {
 
   return(
     <div>
-      <h2 className='pf-h2'>Product {params.id}</h2>
+      <h2 className='pf-h2'>{location.props.title} from {location.props.domain}</h2>
       <div className='product-container'>
           
           <Slider {...productSettings}>
@@ -41,11 +41,9 @@ function ProductView() {
 
           <div className='pf-description'>
             <div className='pf-desc-item pf-desc-title'>{location.props.title}</div>
-            <div className='pf-desc-item pf-desc-domain'>{location.props.domain}</div>
-            <div className='pf-desc-item pf-desc-url'>{location.props.url}</div>
+            <div className='pf-desc-item pf-desc-url'><a href={location.props.url}>Visit Link</a></div>
             <div className='pf-desc-item pf-desc-desc'>{location.props.description}</div>
-            <div className='pf-desc-item pf-desc-category'>{location.props.category}</div>
-            <div className='pf-desc-item pf-desc-id'>{location.props.id}</div>
+ 
           </div>
 
         </div>
