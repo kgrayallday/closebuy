@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { findFavorite } from "../helpers/selectors";
 import "./ProductCard.css";
 
 function ProductCard(props) {
   const [ selected, setSelected ] = useState(false)
-  const { id, title, description, url, images, price, category, domain, saveFavourite } =
-    props;
+  const { 
+    id,
+    title,
+    description,
+    url,
+    images,
+    price,
+    category,
+    domain,
+    favoritesData, 
+    saveFavourite } = props;
 
   // Example solution. If listing has zero images, push close-buy logo image or placeholder image into array.
   if (images.length === 0) {
@@ -16,13 +26,16 @@ function ProductCard(props) {
   const select = function() {
     const listing = {id, title, description, url, images, price, category, domain}
     saveFavourite(listing)
-    
-    if (selected === false) {
-      setSelected(true);
-    } else {
-      setSelected(false);
-    }
   };
+
+  useEffect(() => {
+    if (findFavorite(favoritesData, id) === false) {
+      setSelected(false);
+    } else {
+      setSelected(true);
+    }
+  }, [select]);
+
 
   return (
       <div className="product_container" style={{ backgroundImage: `url(${images[0]})` }}>
