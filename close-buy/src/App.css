@@ -17,8 +17,23 @@
 
 .slick-next{
   right: 8px !important;
+  height: 70%;
+
 }
 
 .slick-prev{
   left:8px !important;
+  z-index: 99;
+}
+
+.slick-prev:before {
+  /* content: "◀︎"; */
+  color: black;
+  font-size: 30px;
+}
+
+.slick-next:before {
+  /* content: "►"; */
+  color: black;
+  font-size: 30px;
 }
