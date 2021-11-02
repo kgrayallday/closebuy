@@ -94,6 +94,7 @@ function App() {
         category={listing.category}
         domain={listing.domain}
         saveFavourite={saveFavourite}
+        favoritesData={state.favoritesData}
         />
       )
     });
