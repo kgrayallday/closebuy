@@ -2,7 +2,7 @@
     background-color: var(--fg-color);
     color: white;
     border: 3.5px solid var(--fg-color);
-    border-radius: 25px;
+    border-radius: 0px 0px 25px 25px;
     padding: 1vh;
     width: 20vw;
     height: 6vh;
