@@ -1,10 +1,10 @@
 body {
-  background-color: rgb(252, 197, 206);
+  background-color: var(--bg-color);
 }
 
 header {
   text-align: center;
-  color: rgb(100,150,150);
+  color: var(--fg-color);
 
 }
 
@@ -16,7 +16,7 @@ header {
   height:100vh;
 }
 .splash-child{
-  color: rgb(100, 150, 150);
+  color: var(--fg-color);
 }
 
 /* 

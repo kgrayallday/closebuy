@@ -78,7 +78,7 @@ function App() {
       infinite: true,
       arrows: true,
       centerMode: true,
-      centerPadding: '20px', /* 50px is default */
+      centerPadding: '30px', /* 50px is default */
       draggable: true, /* true is default */
       lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
       slidesToShow: 4

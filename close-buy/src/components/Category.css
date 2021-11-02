@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(252, 197, 206);
+  background-color: var(--bg-color);
 }
 
 header {

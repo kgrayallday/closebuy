@@ -19,10 +19,19 @@ function Navbar() {
         </Link>
         </div>
 
+        <div className='spacer'></div>
+
       <div className="right">
+        <div className='nav-about'>
         <Link to="/about" style={{ color: 'inherit', textDecoration: 'inherit'}}>
           About
         </Link>
+        </div>
+
+        <div className='login-signup'>
+          Login | Sign up
+        </div>
+
       </div>
     </nav>
   )
