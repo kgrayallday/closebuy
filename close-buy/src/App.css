@@ -14,3 +14,11 @@
   text-align: center;
   background-color:rgb(252, 200, 209);
 }
+
+.slick-next{
+  right: 8px !important;
+}
+
+.slick-prev{
+  left:8px !important;
+}
