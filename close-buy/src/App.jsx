@@ -40,12 +40,13 @@ function App() {
 
   // STRETCH - Function serves up Listing data to use via PUT to Server DB.
   const saveFavourite = function(listingData) {
-    console.log("Saved Favorite listng data", listingData);
+    console.log("Saved Favorite listing data", listingData);
   };
 
   // Main axios data function
   const fetchData = function() {
-    const url = `api/products?q=${state.queryTerm}`;
+    // const url = `api/products?q=${state.queryTerm}`;
+    const url = `api/products/craigslist?q=${state.queryTerm}`;
     
     axios.get(url)
     .then((response) => {
@@ -70,7 +71,6 @@ function App() {
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
   useEffect(() => {
     fetchData();
-    fetchFavorites();
   }, [state.queryTerm]);
 
   // Example filterfunction for API response from ./helpers

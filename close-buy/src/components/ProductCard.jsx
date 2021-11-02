@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 function ProductCard(props) {
+  const [ selected, setSelected ] = useState(false)
   const { id, title, description, url, images, price, category, domain, saveFavourite } =
     props;
 
@@ -15,6 +16,12 @@ function ProductCard(props) {
   const select = function() {
     const listing = {id, title, description, url, images, price, category, domain}
     saveFavourite(listing)
+    
+    if (selected === false) {
+      setSelected(true);
+    } else {
+      setSelected(false);
+    }
   };
 
   return (
@@ -22,11 +29,11 @@ function ProductCard(props) {
         <div className="product_container__price">
           <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
         </div>
-        <div className="fav_pin_unsel">
-          <i class="fas fa-star"></i>
+        <div className={state ? "fav_pin_unsel" : "fav_pin_sel"}>
+          <i class="fas fa-star" onClick={select}></i>
         </div>
-        <div className="fav_pin_sel">
-          <i className="fas fa-star" onClick={select}></i>
+        <div className={state ? "fav_pin_sel" : "fav_pin_sel"}>
+          <i className="fas fa-star" ></i>
         </div>
 
         <Link 
