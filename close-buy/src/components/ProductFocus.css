@@ -43,19 +43,20 @@
 }
 
 .pf-slider .slick-list .slick-track{
-  height: 80vw;
+  height: 90vw;
 }
 
 .pf-slider .slick-list .slick-track .slick-slide{
   width:auto;
   object-fit: cover;
+  margin:auto;
 }
 
 .pf-image img{
   object-fit: cover;
   height:40vw;
   width: auto;
-  margin: 0 15%;
+  margin: 0 auto;
 }
 
 .pf-slider.slick-initialized{
