@@ -14,7 +14,7 @@ function ProductCard(props) {
     price,
     category,
     domain,
-    favoritesData, 
+    favoritesData,
     saveFavourite,
     deleteFavorite } = props;
 

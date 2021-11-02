@@ -72,7 +72,6 @@ function App() {
     .then((response) => {
       const favoritesData = response.data;
       setState(prev => ({...prev, favoritesData}))
-      console.log("Favorites Response data ....", favoritesData)
     })
   };
 
