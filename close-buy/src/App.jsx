@@ -7,11 +7,13 @@ import Splash from './components/Splash';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import Login from './components/Login';
 import ProductCard from './components/ProductCard';
 import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
 import ProductFocus from './components/ProductFocus';
-import { filterData } from './helpers/selectors';
+import Favorites from './components/Favorites';
+import { filterData, updateFavorites } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -24,6 +26,8 @@ function App() {
   const [ state, setState ] = useState({
     loading: false,
     queryTerm: "",
+    userId: 1,
+    favoritesData: [],
     apiData: []
   });
 
@@ -34,15 +38,40 @@ function App() {
     setState(prev => ({...prev, queryTerm, loading}))
   };
 
+  // STRETCH - Function serves up Listing data to use via PUT to Server DB.
+  const saveFavourite = function(listingData) {
+    const newFavotite = listingData;
+    const favoritesData = [...state.favoritesData, newFavotite];
+    setState(prev => ({...prev, favoritesData}));
+  };
+
+  const deleteFavorite = function(listingData) {
+    const id = listingData.domain_id
+    const favoritesData = updateFavorites(state.favoritesData, id);
+    setState(prev => ({...prev, favoritesData}));
+  };
+
   // Main axios data function
   const fetchData = function() {
-    const url = `api/products?q=${state.queryTerm}`;
+    // const url = `api/products?q=${state.queryTerm}`;
+    const url = `api/products/craigslist?q=${state.queryTerm}`;
     
     axios.get(url)
     .then((response) => {
        const apiData = response.data;
        const loading = false;
        setState(prev => ({...prev, loading, apiData }))
+    })
+  };
+
+  // STRETCH - Function retrives Favoruites listings via server-DB.
+  const fetchFavorites = function () {
+    const url = `api/favourites?userId=${state.userId}`
+
+    axios.get(url)
+    .then((response) => {
+      const favoritesData = response.data;
+      setState(prev => ({...prev, favoritesData}))
     })
   };
 
@@ -69,6 +98,9 @@ function App() {
         price={listing.price}
         category={listing.category}
         domain={listing.domain}
+        saveFavourite={saveFavourite}
+        deleteFavorite={deleteFavorite}
+        favoritesData={state.favoritesData}
         />
       )
     });
@@ -91,7 +123,7 @@ function App() {
     <div>
       <Router>
 
-      <Navbar />
+      <Navbar userid={state.userId}/>
       {/* <Splash /> */}
       
 
@@ -106,6 +138,14 @@ function App() {
 
         <Route path="/about">
           <About />
+        </Route>
+
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        <Route path="/favorites">
+          <Favorites favoriteListings={() => renderProducts(state.favoritesData)}/>
         </Route>
 
         <Route path="/product/category/green">
