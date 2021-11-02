@@ -41,6 +41,8 @@ function App() {
   // STRETCH - Function serves up Listing data to use via PUT to Server DB.
   const saveFavourite = function(listingData) {
     console.log("Saved Favorite listing data", listingData);
+    const favoritesData = [listingData];
+    setState(prev => ({...prev, favoritesData}));
   };
 
   // Main axios data function

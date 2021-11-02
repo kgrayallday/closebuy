@@ -29,11 +29,8 @@ function ProductCard(props) {
         <div className="product_container__price">
           <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
         </div>
-        <div className={state ? "fav_pin_unsel" : "fav_pin_sel"}>
+        <div className={selected ? 'fav_pin_sel' : 'fav_pin_unsel'}>
           <i class="fas fa-star" onClick={select}></i>
-        </div>
-        <div className={state ? "fav_pin_sel" : "fav_pin_sel"}>
-          <i className="fas fa-star" ></i>
         </div>
 
         <Link 
