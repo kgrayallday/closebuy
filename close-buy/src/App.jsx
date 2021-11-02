@@ -201,7 +201,9 @@ function App() {
       centerPadding: '30px', /* 50px is default */
       draggable: true, /* true is default */
       lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
-      slidesToShow: 4
+      slidesToShow: 4,
+      slidesToScroll: 4
+
 
     }
 
@@ -236,20 +238,27 @@ function App() {
         <Route path="/">
           <Search onSave={saveFn} />
 
-          <CategoryButton linkTerm={"green"}/>
-          <Slider {...settings} >
-            {renderProducts(greenData)}
-          </Slider>
+          <div className='green-zone'>
+            <CategoryButton linkTerm={"green"}/>
+            <Slider {...settings} >
+              {renderProducts(greenData)}
+            </Slider>
+          </div>
 
-          <CategoryButton linkTerm={"blue"}/>
-          <Slider {...settings} >
-            {renderProducts(blueData)}
-          </Slider>
+          <div className='blue-zone'>
+            <CategoryButton linkTerm={"blue"}/>
+            <Slider {...settings} >
+              {renderProducts(blueData)}
+            </Slider>
+          </div>
 
+          <div className='yellow-zone'>
           <CategoryButton linkTerm={"yellow"}/>
-          <Slider {...settings}>
+          <Slider {...settings} >
             {renderProducts(yellowData)}
           </Slider>
+          </div>
+
         </Route>
       </Switch>
 
