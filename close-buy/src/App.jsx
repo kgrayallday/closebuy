@@ -46,7 +46,7 @@ function App() {
   };
 
   const deleteFavorite = function(listingData) {
-    const id = listingData.id
+    const id = listingData.domain_id
     const favoritesData = updateFavorites(state.favoritesData, id);
     setState(prev => ({...prev, favoritesData}));
   };

@@ -201,7 +201,7 @@ export function findFavorite(listingData, id) {
   const favoriteData = [...listingData];
 
   for (const element of favoriteData) {
-    if (element.id === id) {
+    if (element.domain_id === id) {
       return true;
     }
   }
@@ -214,7 +214,7 @@ export function updateFavorites(listingData, id) {
   let results = [];
 
   for (const element of favoritesData) {
-    if (element.id !== id) {
+    if (element.domain_id !== id) {
       results.push(element);
     }
   }

@@ -25,13 +25,15 @@ function ProductCard(props) {
 
   // Serves up listing data to App.jsx to send a PUT request to Favourites DB.
   const select = function() {
-    const listing = {id, title, description, url, images, price, category, domain}
+    const domain_id = id
+    const listing = {domain_id, title, description, url, images, price, category, domain}
     saveFavourite(listing)
   };
 
   // Serves up listing data to App.jsx to send a Delete request to Favourites DB.
   const deSelect = function() {
-    const listing = {id, title, description, url, images, price, category, domain}
+    const domain_id = id
+    const listing = {domain_id, title, description, url, images, price, category, domain}
     deleteFavorite(listing)
   };
 
