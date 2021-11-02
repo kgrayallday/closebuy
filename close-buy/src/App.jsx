@@ -40,8 +40,8 @@ function App() {
 
   // STRETCH - Function serves up Listing data to use via PUT to Server DB.
   const saveFavourite = function(listingData) {
-    console.log("Saved Favorite listing data", listingData);
-    const favoritesData = [listingData];
+    const newFavotite = listingData;
+    const favoritesData = [...state.favoritesData, newFavotite];
     setState(prev => ({...prev, favoritesData}));
   };
 
@@ -136,7 +136,7 @@ function App() {
         </Route>
 
         <Route path="/favorites">
-          <Favorites />
+          <Favorites favoriteListings={() => renderProducts(state.favoritesData)}/>
         </Route>
 
         <Route path="/product/category/green">
