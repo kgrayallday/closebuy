@@ -13,7 +13,7 @@ import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
 import ProductFocus from './components/ProductFocus';
 import Favorites from './components/Favorites';
-import { filterData } from './helpers/selectors';
+import { filterData, updateFavorites } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -46,7 +46,9 @@ function App() {
   };
 
   const deleteFavorite = function(listingData) {
-    console.log("Deleting favorite!", listingData);
+    const id = listingData.id
+    const favoritesData = updateFavorites(state.favoritesData, id);
+    setState(prev => ({...prev, favoritesData}));
   };
 
   // Main axios data function

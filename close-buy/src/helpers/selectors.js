@@ -207,3 +207,16 @@ export function findFavorite(listingData, id) {
   }
   return false;
 };
+
+// function removes favorite listing by listing id. Returns new array of listings.
+export function updateFavorites(listingData, id) {
+  const favoritesData = [...listingData];
+  let results = [];
+
+  for (const element of favoritesData) {
+    if (element.id !== id) {
+      results.push(element);
+    }
+  }
+  return results;
+}
