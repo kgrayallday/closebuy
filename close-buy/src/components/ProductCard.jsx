@@ -1,27 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { findFavorite } from "../helpers/selectors";
 import "./ProductCard.css";
 
 function ProductCard(props) {
-  const { id, title, description, url, images, price, category, domain } =
-    props;
+  const [ selected, setSelected ] = useState(false)
+  const { 
+    id,
+    title,
+    description,
+    url,
+    images,
+    price,
+    category,
+    domain,
+    favoritesData,
+    saveFavourite,
+    deleteFavorite } = props;
 
   // Example solution. If listing has zero images, push close-buy logo image or placeholder image into array.
   if (images.length === 0) {
     images.push("https://picsum.photos/400/600");
   }
 
+  // Serves up listing data to App.jsx to send a PUT request to Favourites DB.
+  const select = function() {
+    const domain_id = id
+    const listing = {domain_id, title, description, url, images, price, category, domain}
+    saveFavourite(listing)
+  };
+
+  // Serves up listing data to App.jsx to send a Delete request to Favourites DB.
+  const deSelect = function() {
+    const domain_id = id
+    const listing = {domain_id, title, description, url, images, price, category, domain}
+    deleteFavorite(listing)
+  };
+
+  // checks if id is listed in current favoritesData array. Renders star styling.
+  useEffect(() => {
+    if (findFavorite(favoritesData, id) === false) {
+      setSelected(false);
+    } else {
+      setSelected(true);
+    }
+  }, [select, deSelect]);
+
+
   return (
       <div className="product_container" style={{ backgroundImage: `url(${images[0]})` }}>
         <div className="product_container__price">
           <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
         </div>
-        <div className="fav_pin_unsel">
-          <i class="fas fa-star"></i>
-        </div>
-        <div className="fav_pin_sel">
-          <i className="fas fa-star"></i>
-        </div>
+        {selected ? 
+        <div className='fav_pin_sel' ><i class="fas fa-star" onClick={deSelect}></i></div> : 
+        <div className='fav_pin_unsel'><i class="fas fa-star" onClick={select}></i></div>}
 
         <Link 
           to={{ pathname: `/product/${id}`,
