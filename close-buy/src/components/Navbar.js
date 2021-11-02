@@ -21,14 +21,21 @@ function Navbar(props) {
         </Link>
         </div>
 
+        <div className='spacer'></div>
+
       <div className="right">
+        <div className='nav-about'>
         <Link to="/about" style={{ color: 'inherit', textDecoration: 'inherit'}}>
           About
         </Link>
         <Link to="/favorites" style={{ color: 'inherit', textDecoration: 'inherit'}}>
           Favorites
         </Link>
-        {!userId ? <button className="logout_button">Logout</button> : <Login />}
+        </div>
+        <div className='login-signup'>
+          Login | Sign up
+        </div>
+
       </div>
     </nav>
   )
