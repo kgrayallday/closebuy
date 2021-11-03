@@ -20,17 +20,16 @@
   display: flex;
   align-items: flex-end;
   padding: 10px 10px 20px 10px;
-  width: 10vw;
+  width: 8vw;
   border-radius: 0px 50px 0px 0px;
   color: #000;
   background-color: rgba(255, 255, 255, 1);
 }
 .product_container .product_container__price span {
   margin-right: 20px;
+  font-weight: 600;
 }
-.product_container .product_container__price i {
-  margin-right: 6px;
-}
+
 .product_container .product_container__description {
   background-color: #fff;
   display: flex;
