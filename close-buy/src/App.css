@@ -17,9 +17,13 @@
 }
 
 .slick-next{
-  right: 8px !important;
+  right: 20px !important;
   height: 70%;
 
+}
+
+.slick-list{
+  width:97% !important;
 }
 
 .slick-prev{
