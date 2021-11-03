@@ -1,0 +1,28 @@
+.loading__card--status{
+  background-color: rgb(252, 197, 206);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+.loading-image{
+  height: 4em;
+  margin-top: 3.5em;
+  margin-bottom: 2.5em;
+  margin-right: 1em;
+  animation: rotation 1.5s infinite linear;
+  }
+
+.loading__card-text--semi-bold{
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

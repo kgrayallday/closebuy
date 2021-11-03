@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
-import './ProductView.css';
+import './ProductFocus.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -13,8 +13,8 @@ function ProductView() {
   console.log("Product params", params) // debuggin to check url params
   console.log("Current state", location.props) // debuggin to check location.props
 
-  const productSettings = {
-    className: 'product-slider',
+  const pfSettings = {
+    className: 'pf-slider',
     infinite: false,
     arrows: true,
     dots: true,
@@ -27,25 +27,23 @@ function ProductView() {
   }
 
   const imagesArray = location.props.images.map((url, index) => {
-    return <img key={index} src={url} className='product-image' alt='product'></img>
+    return <div className='pf-image'><img key={index} src={url} className='pf-image' alt='product'></img></div>
   })
 
   return(
     <div>
-      <h2 className='pf-h2'>Product {params.id}</h2>
+      <h2 className='pf-h2'>{location.props.title} from {location.props.domain}</h2>
       <div className='product-container'>
           
-          <Slider {...productSettings}>
+          <Slider {...pfSettings}>
               {imagesArray}
           </Slider>
 
           <div className='pf-description'>
             <div className='pf-desc-item pf-desc-title'>{location.props.title}</div>
-            <div className='pf-desc-item pf-desc-domain'>{location.props.domain}</div>
-            <div className='pf-desc-item pf-desc-url'>{location.props.url}</div>
+            <div className='pf-desc-item pf-desc-url'><a href={location.props.url}>Visit Link</a></div>
             <div className='pf-desc-item pf-desc-desc'>{location.props.description}</div>
-            <div className='pf-desc-item pf-desc-category'>{location.props.category}</div>
-            <div className='pf-desc-item pf-desc-id'>{location.props.id}</div>
+ 
           </div>
 
         </div>

@@ -1,22 +1,46 @@
 nav {
   color: white;
   width: auto;
-  background-color: rgb(117, 169, 249);
-
+  background-color: var(--fg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 15px;/* top-bottom left-right */ 
+  padding: 15px 30px;/* top-bottom left-right */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .center{
   font-size: 2em;
+  margin-left: 20px;
 }
 
 .right{
+  display:flex;
+  flex-direction: row-reverse;
   font-size: 2em;
+}
+
+.logout_button{
+    background-color: rgb(117, 169, 249);
+    color: white;
+    border: 3.5px solid rgb(117, 169, 249);
+    font-size: inherit;
+    transition-duration: 0.4s;
+}
+
+.logout_button:hover {
+  background-color: rgb(252, 197, 206);
 }
 
 #brand-mark{
   font-size: 1.5em;
+}
+
+.login-signup{
+  padding-right: 20px;
+  cursor:pointer;
+}
+
+.spacer{
+  flex-grow: 1;
 }

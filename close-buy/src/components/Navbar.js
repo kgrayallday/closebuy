@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../img/closebuy-logo-white.png';
+import Login from './Login';
 
-function Navbar() {
+function Navbar(props) {
+  const { userId } = props;
 
   return(
     <nav>
@@ -19,10 +21,21 @@ function Navbar() {
         </Link>
         </div>
 
+        <div className='spacer'></div>
+
       <div className="right">
+        <div className='nav-about'>
         <Link to="/about" style={{ color: 'inherit', textDecoration: 'inherit'}}>
           About
         </Link>
+        <Link to="/favorites" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+          Favorites
+        </Link>
+        </div>
+        <div className='login-signup'>
+          Login | Sign up
+        </div>
+
       </div>
     </nav>
   )

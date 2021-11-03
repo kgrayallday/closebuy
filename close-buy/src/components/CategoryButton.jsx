@@ -6,11 +6,11 @@ function CategoryButton(props) {
   const { linkTerm } = props;
 
   return(
-    <Link to={`/product/category/${linkTerm}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-      <div className="button_container">
-      <button className="category_button">Expand View</button>
-      </div>
-    </Link>
+    <div className="button_container">
+      <Link to={`/product/category/${linkTerm}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+      <button className="category_button">Show All</button>
+      </Link>
+    </div>
   )
 
 }

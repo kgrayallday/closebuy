@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(252, 197, 206);
+  background-color: var(--bg-color);
 }
 
 header {
@@ -28,13 +28,20 @@ header {
 }
 
 
-.category-child{
+/* .category-child{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   color: rgb(100, 150, 150);
 
+} */
+
+.category-child {
+  padding: 2vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  grid-gap: 0;
 }
 
 /* 
@@ -52,3 +59,4 @@ header{
 .fa-couch {
   font-size: 40vw;
 }
+

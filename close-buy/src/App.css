@@ -6,11 +6,53 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 :root {
-  --bg-pink: rgb(252, 197, 206);
-  --fg-blue: rgb(117, 169, 249);
+  --bg-color: #fcc5ce;
+  --fg-color: #75a9f9;
+  height: 100vh;
 }
 
 .App {
   text-align: center;
-  background-color:rgb(252, 200, 209);
+  background-color:var(--bg-pink);
+}
+
+.slick-next{
+  right: 8px !important;
+  height: 70%;
+
+}
+
+.slick-prev{
+  left:8px !important;
+  z-index: 99;
+}
+
+.slick-prev:before {
+  /* content: "◀︎"; */
+  color: black;
+  font-size: 30px;
+}
+
+.slick-next:before {
+  /* content: "►"; */
+  color: black;
+  font-size: 30px;
+}
+
+.green-zone{
+  margin: 6vh 0;
+  background-color: #93f093;
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.blue-zone{
+  background-color: #82bef4;
+  margin: 6vh 0;
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.yellow-zone{
+  background-color: #fff4a4;
+  margin: 6vh 0;
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
