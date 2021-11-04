@@ -9,7 +9,7 @@ function Category(props) {
   return (
     <div className='category-parent'>
         <button className="return-button" onClick={() => history.goBack()}
-        >Return To Search</button>
+        > ◁ Return To Search</button>
       <div className="category-child">
         {listings()}
       </div>
