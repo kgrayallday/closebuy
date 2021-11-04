@@ -12,7 +12,9 @@
 }
 
 .pf-h2{
-  padding-left: 10%;
+  padding-left: 8%;
+  font-weight: 300;
+  font-size: 1.5em;
 }
 
 .pf-description{

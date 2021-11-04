@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Loading from './components/Loading';
@@ -53,8 +53,7 @@ function App() {
 
   // Main axios data function
   const fetchData = function() {
-    // const url = `api/products?q=${state.queryTerm}`;
-    const url = `api/products/craigslist?q=${state.queryTerm}`;
+    const url = `api/products?q=${state.queryTerm}`;
     
     axios.get(url)
     .then((response) => {
@@ -89,42 +88,33 @@ function App() {
   const renderProducts = (array) => array.map((listing) => {
       return (
         <ProductCard
-        key={listing.domain_id}
-        id={listing.domain_id}
-        title={listing.title}
-        description={listing.description}
-        url={listing.url}
-        images={listing.images}
-        price={listing.price}
-        category={listing.category}
-        domain={listing.domain}
-        saveFavourite={saveFavourite}
-        deleteFavorite={deleteFavorite}
-        favoritesData={state.favoritesData}
+          key={listing.domain_id}
+          id={listing.domain_id}
+          title={listing.title}
+          description={listing.description}
+          url={listing.url}
+          images={listing.images}
+          price={listing.price}
+          category={listing.category}
+          domain={listing.domain}
+          saveFavourite={saveFavourite}
+          deleteFavorite={deleteFavorite}
+          favoritesData={state.favoritesData}
         />
       )
     });
 
     const settings = {
       className: 'slider',
-      infinite: true,
+      infinite: false,
       arrows: true,
-      centerMode: true,
+      centerMode: false,
       centerPadding: '30px', /* 50px is default */
       draggable: true, /* true is default */
-      lazyLoad: 'progressive',
-      slidesToShow: 6,
-      slidesToScroll: 1,
+      lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
+      slidesToShow: 5,
+      slidesToScroll: 3,
       responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 5,
-            slidesToScroll: 4,
-            infinite: true,
-            dots: true
-          }
-        },
         {
           breakpoint: 1024,
           settings: {
@@ -140,6 +130,13 @@ function App() {
             slidesToShow: 3,
             slidesToScroll: 2
           }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
         }
       ]
     }
@@ -149,7 +146,7 @@ function App() {
       <Router>
 
       <Navbar userid={state.userId}/>
-      
+
       <Switch>
         <Route path="/loading">
           <Loading message={"....Loading Results!"}/>
