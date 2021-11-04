@@ -3,17 +3,18 @@
 }
 
 .return-button{
-  background-color: rgb(117, 169, 249);
+  background-color: var(--sec-color);
   color: white;
-  margin-left: 6vw;
+  margin-left: 5vw;
   margin-top: 3vh;
-  border: 3.5px solid rgb(117, 169, 249);
+  border: 3.5px solid var(--sec-color);
   border-radius: 25px;
   padding: 1em 0;
-  width: 10vw;
+  width: 14vw;
   font-weight: bold;
   font-size: 1.2em;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 
