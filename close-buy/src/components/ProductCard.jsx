@@ -53,8 +53,8 @@ function ProductCard(props) {
           <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
         </div>
         {selected ? 
-        <div className='fav_pin_sel' ><i class="fas fa-star" onClick={deSelect}></i></div> : 
-        <div className='fav_pin_unsel'><i class="fas fa-star" onClick={select}></i></div>}
+        <div className='fav_pin_sel' ><i className="fas fa-star" onClick={deSelect}></i></div> : 
+        <div className='fav_pin_unsel'><i className="fas fa-star" onClick={select}></i></div>}
 
         <Link 
           to={{ pathname: `/product/${id}`,
