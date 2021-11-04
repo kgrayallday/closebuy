@@ -12,7 +12,7 @@ function About() {
           <h2>Kyle Gray</h2>
           <div className='about-dev-content'>
           <div className='about-dev-mug'>
-            <img src='https://res.cloudinary.com/tadabase/image/upload/v1577943236/client/suiteupstairs/placeholder_male1_hn5ybs.jpg'></img>
+            <img src='https://res.cloudinary.com/tadabase/image/upload/v1577943236/client/suiteupstairs/placeholder_male1_hn5ybs.jpg' alt=''></img>
           </div>
           <div className='about-dev-desc'>
             <p> So-and-so is a developer from a place where developers come from. They Developed there and then developments were made that led them here. Now they continue to develope here and there and everywhere. </p>
@@ -24,7 +24,7 @@ function About() {
           <h2>Ricky Darke</h2>
           <div className='about-dev-content'>
           <div className='about-dev-mug'>
-            <img src='https://res.cloudinary.com/tadabase/image/upload/v1577943236/client/suiteupstairs/placeholder_male1_hn5ybs.jpg'></img>
+            <img src='https://res.cloudinary.com/tadabase/image/upload/v1577943236/client/suiteupstairs/placeholder_male1_hn5ybs.jpg' alt=''></img>
           </div>
 
           <div className='about-dev-desc'>
@@ -38,7 +38,7 @@ function About() {
           <h2>Sanghwan Jeon</h2>
           <div className='about-dev-content'>
           <div className='about-dev-mug'>
-            <img src='https://res.cloudinary.com/tadabase/image/upload/v1577943236/client/suiteupstairs/placeholder_male1_hn5ybs.jpg'></img>
+            <img src='https://res.cloudinary.com/tadabase/image/upload/v1577943236/client/suiteupstairs/placeholder_male1_hn5ybs.jpg' alt=''></img>
           </div>
 
           <div className='about-dev-desc'>
