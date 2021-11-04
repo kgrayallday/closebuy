@@ -8,7 +8,7 @@ function Favorites(props) {
 
   return(
     <div className='category-parent'>
-    <h2>Favourties page!</h2>
+      <h2> My Favorites </h2>
     <button className="return-button" onClick={() => history.goBack()}
     >Return To Search</button>
     <div className='category-child'>
