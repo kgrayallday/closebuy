@@ -25,7 +25,11 @@ import Slider from "react-slick";
 function App() {
   const [ state, setState ] = useState({
     loading: false,
+<<<<<<< Updated upstream
     queryTerm: "",
+=======
+    queryTerm: "couch",
+>>>>>>> Stashed changes
     userId: 1,
     favoritesData: [],
     apiData: []
@@ -113,10 +117,45 @@ function App() {
       centerPadding: '30px', /* 50px is default */
       draggable: true, /* true is default */
       lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
+<<<<<<< Updated upstream
       slidesToShow: 4,
       slidesToScroll: 4
 
 
+=======
+      slidesToShow: 6,
+      slidesToScroll: 5,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 4,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+>>>>>>> Stashed changes
     }
 
   return (
@@ -168,21 +207,30 @@ function App() {
         {state.loading ? <Loading message={".....Surfing!"} /> : <Search onSave={saveFn} /> }
 
           <div className='green-zone'>
+          <div className='toprow'>
             <CategoryButton linkTerm={"green"}/>
+            <h1> Neighbourly </h1>
+            </div>
             <Slider {...settings} >
               {renderProducts(greenData)}
             </Slider>
           </div>
 
           <div className='blue-zone'>
+          <div className='toprow'>
             <CategoryButton linkTerm={"blue"}/>
+            <h1> Craft & Community </h1>
+            </div>
             <Slider {...settings} >
               {renderProducts(blueData)}
             </Slider>
           </div>
 
           <div className='yellow-zone'>
+            <div className='toprow'>
           <CategoryButton linkTerm={"yellow"}/>
+          <h1> Retail </h1>
+          </div>
           <Slider {...settings} >
             {renderProducts(yellowData)}
           </Slider>
