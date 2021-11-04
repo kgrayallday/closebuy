@@ -41,7 +41,7 @@ function ProductView() {
 
           <div className='pf-description'>
             <div className='pf-desc-item pf-desc-title'>{location.props.title}</div>
-            <div className='pf-desc-item pf-desc-url'><a href={location.props.url}>Visit Link </a></div>
+            <div className='pf-desc-item pf-desc-url'><a href={location.props.url} target="_blank" >Visit Link </a></div>
             <div className='pf-desc-item pf-desc-desc'>{location.props.description}</div>
  
           </div>
