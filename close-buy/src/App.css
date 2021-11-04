@@ -44,24 +44,23 @@
 
 .green-zone{
   margin: 6vh 0;
-<<<<<<< Updated upstream
-  background-color: #93f093;
-=======
   background-color: var(--cat-first);
->>>>>>> Stashed changes
   box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  min-height: 20vh;
 }
 
 .blue-zone{
   background-color: var(--cat-second);
   margin: 6vh 0;
   box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  min-height: 20vh;
 }
 
 .yellow-zone{
   background-color: var(--cat-third);
   margin: 6vh 0;
   box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  min-height: 20vh;
 }
 
 .toprow{

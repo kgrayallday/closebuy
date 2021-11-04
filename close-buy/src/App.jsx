@@ -25,11 +25,7 @@ import Slider from "react-slick";
 function App() {
   const [ state, setState ] = useState({
     loading: false,
-<<<<<<< Updated upstream
-    queryTerm: "",
-=======
     queryTerm: "couch",
->>>>>>> Stashed changes
     userId: 1,
     favoritesData: [],
     apiData: []
@@ -116,15 +112,9 @@ function App() {
       centerMode: true,
       centerPadding: '30px', /* 50px is default */
       draggable: true, /* true is default */
-      lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
-<<<<<<< Updated upstream
-      slidesToShow: 4,
-      slidesToScroll: 4
-
-
-=======
+      lazyLoad: 'progressive',
       slidesToShow: 6,
-      slidesToScroll: 5,
+      slidesToScroll: 1,
       responsive: [
         {
           breakpoint: 1200,
@@ -151,11 +141,7 @@ function App() {
             slidesToScroll: 2
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
->>>>>>> Stashed changes
     }
 
   return (
@@ -163,9 +149,7 @@ function App() {
       <Router>
 
       <Navbar userid={state.userId}/>
-      {/* <Splash /> */}
       
-
       <Switch>
         <Route path="/loading">
           <Loading message={"....Loading Results!"}/>
@@ -219,7 +203,7 @@ function App() {
           <div className='blue-zone'>
           <div className='toprow'>
             <CategoryButton linkTerm={"blue"}/>
-            <h1> Craft & Community </h1>
+            <h1> Craft and Community </h1>
             </div>
             <Slider {...settings} >
               {renderProducts(blueData)}
