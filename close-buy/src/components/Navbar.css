@@ -1,7 +1,7 @@
 nav {
   color: white;
   width: auto;
-  background-color: var(--fg-color);
+  background-color: var(--sec-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,9 +21,9 @@ nav {
 }
 
 .logout_button{
-    background-color: rgb(117, 169, 249);
+    background-color: var(--pri-color);
     color: white;
-    border: 3.5px solid rgb(117, 169, 249);
+    border: 3.5px solid var(--pri-color);
     font-size: inherit;
     transition-duration: 0.4s;
 }

@@ -1,6 +1,6 @@
 import React, {useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import './Category.css';
+import './Favorites.css';
 
 function Favorites(props) {
   const { favoriteListings } = props;
@@ -8,9 +8,9 @@ function Favorites(props) {
 
   return(
     <div className='category-parent'>
-    <h2>Favourties page!</h2>
+      <h2> My Favorites </h2>
     <button className="return-button" onClick={() => history.goBack()}
-    >Return To Search</button>
+    > ◀︎ Return To Search</button>
     <div className='category-child'>
       {favoriteListings()}
     </div>

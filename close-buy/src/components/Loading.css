@@ -1,5 +1,5 @@
 .loading__card--status{
-  background-color: rgb(252, 197, 206);
+  background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -15,7 +15,7 @@
 
 .loading__card-text--semi-bold{
   font-weight: bold;
-  color: white;
+  color: var(--sec-color);
 }
 
 @keyframes rotation {
