@@ -50,7 +50,7 @@ function ProductCard(props) {
   return (
       <div className="product_container" style={{ backgroundImage: `url(${images[0]})` }}>
         <div className="product_container__price">
-          <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
+          <span> <i className="fa-solid fa-dollar-sign"></i> {price ? price : '0'} </span>
         </div>
         {selected ? 
         <div className='fav_pin_sel' ><i className="fas fa-star" onClick={deSelect}></i></div> : 
