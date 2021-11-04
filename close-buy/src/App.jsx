@@ -167,6 +167,7 @@ function App() {
 
         <Route path="/favorites">
           <Favorites favoriteListings={() => renderProducts(state.favoritesData)}/>
+          <Footer />
         </Route>
 
         <Route path="/product/category/green">
@@ -218,11 +219,10 @@ function App() {
           </Slider>
           </div>
 
-
+          <Footer />
         </Route>
       </Switch>
       </Router>
-      <Footer />
     </div>
   );
 }
