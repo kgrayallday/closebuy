@@ -67,9 +67,22 @@ function ProductCard(props) {
                   src="https://www.kindpng.com/picc/m/559-5595091_craigslist-centralized-network-of-online-communities-logo-hd.png"
                   alt="domain"
                 />
-              )}{domain === "kijiji" && (
+              )}
+              {domain === "kijiji" && (
                 <img
                   src="https://www.techjunkie.com/wp-content/uploads/2019/05/kijiji-logo.png"
+                  alt="domain"
+                />
+              )}
+              {domain === "google" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/google.jpg?raw=true"
+                  alt="domain"
+                />
+              )}
+              {domain === "ebay" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/ebay.jpg?raw=true"
                   alt="domain"
                 />
               )}
