@@ -13,6 +13,7 @@ import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
 import ProductFocus from './components/ProductFocus';
 import Favorites from './components/Favorites';
+import Footer from './components/Footer';
 import { filterData, updateFavorites } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -217,10 +218,11 @@ function App() {
           </Slider>
           </div>
 
+
         </Route>
       </Switch>
-
       </Router>
+      <Footer />
     </div>
   );
 }

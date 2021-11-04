@@ -50,7 +50,7 @@ function ProductCard(props) {
   return (
       <div className="product_container" style={{ backgroundImage: `url(${images[0]})` }}>
         <div className="product_container__price">
-          <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
+          <span> <i className="fa-solid fa-dollar-sign"></i> {price ? price : '0'} </span>
         </div>
         {selected ? 
         <div className='fav_pin_sel' ><i className="fas fa-star" onClick={deSelect}></i></div> : 
@@ -83,6 +83,12 @@ function ProductCard(props) {
               {domain === "ebay" && (
                 <img
                   src="https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/ebay.jpg?raw=true"
+                  alt="domain"
+                />
+              )}
+                            {domain === "etsy" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/design/close-buy/public/images/etsy.png?raw=true"
                   alt="domain"
                 />
               )}
