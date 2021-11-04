@@ -86,6 +86,12 @@ function ProductCard(props) {
                   alt="domain"
                 />
               )}
+                            {domain === "etsy" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/design/close-buy/public/images/etsy.png?raw=true"
+                  alt="domain"
+                />
+              )}
 
               <div className="product_container__description__text">
                 <h2>{title}</h2>
