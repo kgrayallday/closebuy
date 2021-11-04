@@ -15,7 +15,7 @@
   padding:20px;
   height: auto;
   border-radius: 20px;
-  background-color: var(--fg-blue);
+  background-color: var(--pri-color);
   /* border: thick double #32a1ce; */
   margin: 2%;
   display: flex;
