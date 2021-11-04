@@ -6,14 +6,17 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 :root {
-  --bg-color: #fcc5ce;
-  --fg-color: #75a9f9;
+  --pri-color: #fff6b5;
+  --sec-color: #75a9f9;
+  --cat-first: #75a9f9;
+  --cat-second: #75a9f9;
+  --cat-third: #75a9f9;
   height: 100vh;
 }
 
 .App {
   text-align: center;
-  background-color:var(--bg-pink);
+  background-color:var(--pri-color);
 }
 
 .slick-next{
@@ -41,18 +44,40 @@
 
 .green-zone{
   margin: 6vh 0;
+<<<<<<< Updated upstream
   background-color: #93f093;
+=======
+  background-color: var(--cat-first);
+>>>>>>> Stashed changes
   box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .blue-zone{
-  background-color: #82bef4;
+  background-color: var(--cat-second);
   margin: 6vh 0;
   box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .yellow-zone{
-  background-color: #fff4a4;
+  background-color: var(--cat-third);
   margin: 6vh 0;
   box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.toprow{
+  display: flex;
+  justify-content: space-between;
+}
+
+.toprow h1{
+  margin-right: 6vw;
+  color:white;
+}
+
+@media only screen and (max-width: 900px) {
+  /* For Small Screens */
+  .product_container .product_container__description h2 {
+    color: #334454;
+    font-size: 1vw;
+  }
 }
