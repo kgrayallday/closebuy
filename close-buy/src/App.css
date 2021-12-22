@@ -84,3 +84,12 @@
     font-size: 1vw;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  /* For Smallest Screens */
+
+  /* TODO: need to have 2 or 3 items in carousel only
+    this may need to be done is jsx file 
+  */
+
+}
