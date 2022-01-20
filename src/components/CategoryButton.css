@@ -4,12 +4,12 @@
     border: 3.5px solid var(--fg-color);
     border-radius: 0px 0px 25px 25px;
     padding: 1vh;
-    width: 20vw;
-    height: 6vh;
+    width: 16vw;
+    height: 5vh;
     font-weight: bold;
     font-size: 1.5em;
     transition-duration: 0.4s;
-    margin-left: 2vw;
+    margin-left: 4vw;
     
 }
 

@@ -13,6 +13,7 @@ import CategoryButton from './components/CategoryButton';
 import Category from './components/Category';
 import ProductFocus from './components/ProductFocus';
 import Favorites from './components/Favorites';
+import Footer from './components/Footer';
 import { filterData, updateFavorites } from './helpers/selectors';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,7 +26,7 @@ import Slider from "react-slick";
 function App() {
   const [ state, setState ] = useState({
     loading: false,
-    queryTerm: "cats",
+    queryTerm: "couch",
     userId: 1,
     favoritesData: [],
     apiData: []
@@ -113,7 +114,32 @@ function App() {
       draggable: true, /* true is default */
       lazyLoad: 'progressive', /* ondemand or progressive - may be useful for many results */
       slidesToShow: 5,
-      slidesToScroll: 3
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        }
+      ]
     }
 
   return (
@@ -141,6 +167,7 @@ function App() {
 
         <Route path="/favorites">
           <Favorites favoriteListings={() => renderProducts(state.favoritesData)}/>
+          <Footer />
         </Route>
 
         <Route path="/product/category/green">
@@ -163,29 +190,38 @@ function App() {
         {state.loading ? <Loading message={".....Surfing!"} /> : <Search onSave={saveFn} /> }
 
           <div className='green-zone'>
+          <div className='toprow'>
             <CategoryButton linkTerm={"green"}/>
+            <h1> Neighbourly </h1>
+            </div>
             <Slider {...settings} >
               {renderProducts(greenData)}
             </Slider>
           </div>
 
           <div className='blue-zone'>
+          <div className='toprow'>
             <CategoryButton linkTerm={"blue"}/>
+            <h1> Craft and Community </h1>
+            </div>
             <Slider {...settings} >
               {renderProducts(blueData)}
             </Slider>
           </div>
 
           <div className='yellow-zone'>
+            <div className='toprow'>
           <CategoryButton linkTerm={"yellow"}/>
+          <h1> Retail </h1>
+          </div>
           <Slider {...settings} >
             {renderProducts(yellowData)}
           </Slider>
           </div>
 
+          <Footer />
         </Route>
       </Switch>
-
       </Router>
     </div>
   );

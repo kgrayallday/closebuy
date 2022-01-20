@@ -1,0 +1,33 @@
+.footer-content{
+  padding: 10%;
+}
+
+.footer-inner{
+  margin:auto;
+  text-align:center;
+}
+
+footer-content p{
+  color: var(--sec-color);
+}
+
+.fa-facebook{
+  color: #3b5998;
+}
+
+.fa-twitter{
+  color: #55acee;
+}
+
+.fa-google{
+  color: #dd4b39;
+}
+
+.fa-instagram{
+  color: #ac2bac;
+}
+
+.fab{
+  margin: 5%;
+  cursor: pointer;
+}

@@ -1,8 +1,8 @@
 .product-container{
   display:block;
-  background-color: white;
+  background-color: var(--sec-color);
   width: 80%;
-  min-height: auto;
+  height: 50%;
   margin: auto;
   margin-bottom:5%;
   border-radius: 50px;
@@ -22,7 +22,7 @@
   padding-bottom: 2%;
   padding-left: 4%;
   padding-right: 4%;
-  border-top: 1px solid rgb(189, 189, 189);
+  border-top: 1px solid white;
 }
 
 .pf-desc-title{
@@ -56,12 +56,12 @@
 
 .pf-image img{
   object-fit: cover;
-  height:40vw;
+  height:auto;
   width: auto;
   margin: 0 auto;
   border-radius: 10px;
 }
 
 .pf-slider.slick-initialized{
-  height: 45vw;
+  height: 50vh;
 }

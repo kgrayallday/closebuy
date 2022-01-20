@@ -20,7 +20,7 @@ function ProductCard(props) {
 
   // Example solution. If listing has zero images, push close-buy logo image or placeholder image into array.
   if (images.length === 0) {
-    images.push("https://picsum.photos/400/600");
+    images.push("https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/closebuy-nopic-yellow.png?raw=truehttps://picsum.photos/400/600");
   }
 
   // Serves up listing data to App.jsx to send a PUT request to Favourites DB.
@@ -50,11 +50,11 @@ function ProductCard(props) {
   return (
       <div className="product_container" style={{ backgroundImage: `url(${images[0]})` }}>
         <div className="product_container__price">
-          <span> <i className="fa-solid fa-dollar-sign"></i> {price} </span>
+          <span> <i className="fa-solid fa-dollar-sign"></i> {price ? price : '0'} </span>
         </div>
         {selected ? 
-        <div className='fav_pin_sel' ><i class="fas fa-star" onClick={deSelect}></i></div> : 
-        <div className='fav_pin_unsel'><i class="fas fa-star" onClick={select}></i></div>}
+        <div className='fav_pin_sel' ><i className="fas fa-star" onClick={deSelect}></i></div> : 
+        <div className='fav_pin_unsel'><i className="fas fa-star" onClick={select}></i></div>}
 
         <Link 
           to={{ pathname: `/product/${id}`,
@@ -67,9 +67,28 @@ function ProductCard(props) {
                   src="https://www.kindpng.com/picc/m/559-5595091_craigslist-centralized-network-of-online-communities-logo-hd.png"
                   alt="domain"
                 />
-              )}{domain === "kijiji" && (
+              )}
+              {domain === "kijiji" && (
                 <img
                   src="https://www.techjunkie.com/wp-content/uploads/2019/05/kijiji-logo.png"
+                  alt="domain"
+                />
+              )}
+              {domain === "google" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/google.jpg?raw=true"
+                  alt="domain"
+                />
+              )}
+              {domain === "ebay" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/ebay.jpg?raw=true"
+                  alt="domain"
+                />
+              )}
+                            {domain === "etsy" && (
+                <img
+                  src="https://github.com/kgrayallday/closebuy/blob/design/close-buy/public/images/etsy.png?raw=true"
                   alt="domain"
                 />
               )}
