@@ -183,7 +183,7 @@ const favoritesData = [
 // Helper functions start here 
 // .....................
 
-// Function will filter API response data and return an array of objects that include the filter category.
+// filters API res data, return array of objects including filter category.
 export function filterData(data, category) {
   const results = []; 
   const newData = [...data];
@@ -196,7 +196,7 @@ export function filterData(data, category) {
    return results;
 };
 
-// Function takes in an array of listing objects & an id. Returns true if "id" is found within array.
+//takes array of listing objs & id. Returns true if "id" is found within array.
 export function findFavorite(listingData, id) {
   const favoriteData = [...listingData];
 
@@ -208,7 +208,7 @@ export function findFavorite(listingData, id) {
   return false;
 };
 
-// function removes favorite listing by listing id. Returns new array of listings.
+// removes favorite listing by id. Returns new array of listings.
 export function updateFavorites(listingData, id) {
   const favoritesData = [...listingData];
   let results = [];
