@@ -25,7 +25,8 @@ import Slider from "react-slick";
 
 function App() {
   const [ state, setState ] = useState({
-    loading: true,
+    loading: false,
+    splash: true,
     queryTerm: "couch",
     userId: 1,
     favoritesData: [],
