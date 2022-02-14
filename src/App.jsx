@@ -61,7 +61,8 @@ function App() {
     .then((response) => {
        const apiData = response.data;
        const loading = false;
-       setState(prev => ({...prev, loading, apiData }))
+       const splash = false;
+       setState(prev => ({...prev, splash, loading, apiData }))
     })
   };
 
@@ -153,7 +154,7 @@ function App() {
         </Route>
 
         <Route path="/splash">
-          <Splash />
+          {state.splash ? <Splash /> : false}
         </Route>
 
         <Route path="/about">
@@ -186,8 +187,7 @@ function App() {
         </Route>
 
         <Route path="/">
-        {state.loading ? <Loading message={".....Surfing!"} /> : <Search onSave={saveFn} /> }
-
+        {state.splash ? <Splash /> : state.loading ? <Loading message={"...surfing" } /> : <Search onSave={saveFn} /> }
           <div className='green-zone'>
           <div className='toprow'>
             <CategoryButton linkTerm={"green"}/>
