@@ -20,7 +20,7 @@ function ProductCard(props) {
 
   // Example solution. If listing has zero images, push close-buy logo image or placeholder image into array.
   if (images.length === 0) {
-    images.push("https://github.com/kgrayallday/closebuy/blob/development/close-buy/public/images/closebuy-nopic-yellow.png?raw=truehttps://picsum.photos/400/600");
+    images.push("https://github.com/kgrayallday/closebuy/blob/master/public/images/closebuy-nopic-yellow.png?raw=true");
   }
 
   // Serves up listing data to App.jsx to send a PUT request to Favourites DB.
