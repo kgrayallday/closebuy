@@ -76,9 +76,7 @@ function App() {
   };
 
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
-  useEffect(() => {
-    fetchData();
-  }, [state.queryTerm]);
+  useEffect(() => { fetchData(); }, [state.queryTerm]);
 
   // Example filterfunction for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
