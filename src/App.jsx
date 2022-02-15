@@ -142,81 +142,77 @@ function App() {
       ]
     }
 
+  // for splash it should cover the whole screen and exclude navbar
+  // {state.splash ? <Splash /> : { basically everything below vvv }
   return (
     <div>
       <Router>
 
-      <Navbar userid={state.userId}/>
+        <Navbar userid={state.userId}/>
 
-      <Switch>
-        <Route path="/loading">
-          <Loading message={"....Loading Results!"}/>
-        </Route>
+          <Switch>
+            <Route path="/loading">
+              <Loading message={"....Loading Results!"}/>
+            </Route>
 
-        <Route path="/splash">
-          {state.splash ? <Splash /> : false}
-        </Route>
+            <Route path="/about">
+              <About />
+            </Route>
 
-        <Route path="/about">
-          <About />
-        </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-        <Route path="/login">
-          <Login />
-        </Route>
+            <Route path="/favorites">
+              <Favorites favoriteListings={() => renderProducts(state.favoritesData)}/>
+              <Footer />
+            </Route>
 
-        <Route path="/favorites">
-          <Favorites favoriteListings={() => renderProducts(state.favoritesData)}/>
-          <Footer />
-        </Route>
+            <Route path="/product/category/green">
+              <Category listings={() => renderProducts(greenData)}/>
+            </Route>
 
-        <Route path="/product/category/green">
-          <Category listings={() => renderProducts(greenData)}/>
-        </Route>
+            <Route path="/product/category/blue">
+              <Category listings={() => renderProducts(blueData)}/>
+            </Route>
 
-        <Route path="/product/category/blue">
-          <Category listings={() => renderProducts(blueData)}/>
-        </Route>
+            <Route path="/product/category/yellow">
+              <Category listings={() => renderProducts(yellowData)}/>
+            </Route>
 
-        <Route path="/product/category/yellow">
-          <Category listings={() => renderProducts(yellowData)}/>
-        </Route>
+            <Route path={`/product/:id`}>
+              <ProductFocus />
+            </Route>
 
-        <Route path={`/product/:id`}>
-          <ProductFocus />
-        </Route>
+            <Route path="/">
+              {state.splash ?
+                <Splash /> : state.loading ? 
+                <Loading message={"...surfing" } /> : 
+                <Search onSave={saveFn} /> 
+              }
+              <div className='green-zone'>
+                <div className='toprow'>
+                  <CategoryButton linkTerm={"green"}/>
+                  <h1> Neighbourly </h1>
+                </div>
+                  <Slider {...settings} > {renderProducts(greenData)} </Slider>
+              </div>
 
-        <Route path="/">
-        {state.splash ? <Splash /> : state.loading ? <Loading message={"...surfing" } /> : <Search onSave={saveFn} /> }
-          <div className='green-zone'>
-          <div className='toprow'>
-            <CategoryButton linkTerm={"green"}/>
-            <h1> Neighbourly </h1>
-            </div>
-            <Slider {...settings} >
-              {renderProducts(greenData)}
-            </Slider>
-          </div>
+              <div className='blue-zone'>
+                <div className='toprow'>
+                  <CategoryButton linkTerm={"blue"}/>
+                  <h1> Craft and Community </h1>
+                </div>
+                  <Slider {...settings} > {renderProducts(blueData)} </Slider>
+              </div>
 
-          <div className='blue-zone'>
-          <div className='toprow'>
-            <CategoryButton linkTerm={"blue"}/>
-            <h1> Craft and Community </h1>
-            </div>
-            <Slider {...settings} >
-              {renderProducts(blueData)}
-            </Slider>
-          </div>
-
-          <div className='yellow-zone'>
-            <div className='toprow'>
-          <CategoryButton linkTerm={"yellow"}/>
-          <h1> Retail </h1>
-          </div>
-          <Slider {...settings} >
-            {renderProducts(yellowData)}
-          </Slider>
-          </div>
+              <div className='yellow-zone'>
+                <div className='toprow'>
+                  <CategoryButton linkTerm={"yellow"} />
+                  <h1> Retail </h1>
+                </div>
+                <Slider {...settings} > {renderProducts(yellowData)} </Slider>
+              </div>
 
           <Footer />
         </Route>
