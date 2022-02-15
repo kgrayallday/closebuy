@@ -26,6 +26,7 @@ import Slider from "react-slick";
 function App() {
   const [ state, setState ] = useState({
     loading: false,
+    splash: true,
     queryTerm: "couch",
     userId: 1,
     favoritesData: [],
@@ -60,7 +61,8 @@ function App() {
     .then((response) => {
        const apiData = response.data;
        const loading = false;
-       setState(prev => ({...prev, loading, apiData }))
+       const splash = false;
+       setState(prev => ({...prev, splash, loading, apiData }))
     })
   };
 
@@ -76,9 +78,7 @@ function App() {
   };
 
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
-  useEffect(() => {
-    fetchData();
-  }, [state.queryTerm]);
+  useEffect(() => { fetchData(); }, [state.queryTerm]);
 
   // Example filterfunction for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
@@ -154,7 +154,7 @@ function App() {
         </Route>
 
         <Route path="/splash">
-          <Splash />
+          {state.splash ? <Splash /> : false}
         </Route>
 
         <Route path="/about">
@@ -187,8 +187,7 @@ function App() {
         </Route>
 
         <Route path="/">
-        {state.loading ? <Loading message={".....Surfing!"} /> : <Search onSave={saveFn} /> }
-
+        {state.splash ? <Splash /> : state.loading ? <Loading message={"...surfing" } /> : <Search onSave={saveFn} /> }
           <div className='green-zone'>
           <div className='toprow'>
             <CategoryButton linkTerm={"green"}/>
