@@ -24,6 +24,7 @@ import Slider from "react-slick";
 //  ************************************
 
 function App() {
+  // set state for the app
   const [ state, setState ] = useState({
     loading: false,
     splash: true,
@@ -72,7 +73,7 @@ function App() {
 
     axios.get(url)
     .then((response) => {
-      const favoritesData = response.data;
+      const favoritesData = response.dat
       setState(prev => ({...prev, favoritesData}))
     })
   };
