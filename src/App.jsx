@@ -24,7 +24,6 @@ import Slider from "react-slick";
 //  ************************************
 
 function App() {
-  // set state for the app
   const [ state, setState ] = useState({
     loading: false,
     splash: true,
@@ -34,17 +33,17 @@ function App() {
     apiData: []
   });
 
-  // Provides search term string from Search.jsx & updates state.
+  // Provides user search term string from Search.jsx & updates state.
   const saveFn = function(searchTerm) {
     const queryTerm = searchTerm;
     const loading = true;
     setState(prev => ({...prev, queryTerm, loading}))
   };
 
-  // STRETCH - Function serves up Listing data to use via PUT to Server DB.
-  const saveFavourite = function(listingData) {
-    const newFavotite = listingData;
-    const favoritesData = [...state.favoritesData, newFavotite];
+  // STRETCH - serves up listing data to use via PUT to server db.
+  const saveFavorite = function(listingData) {
+    const newFavorite = listingData;
+    const favoritesData = [...state.favoritesData, newFavorite];
     setState(prev => ({...prev, favoritesData}));
   };
 
@@ -67,13 +66,13 @@ function App() {
     })
   };
 
-  // STRETCH - Function retrives Favoruites listings via server-DB.
+  // STRETCH - Function retrieves favorites listings via server db.
   const fetchFavorites = function () {
     const url = `api/favourites?userId=${state.userId}`
 
     axios.get(url)
     .then((response) => {
-      const favoritesData = response.dat
+      const favoritesData = response.data
       setState(prev => ({...prev, favoritesData}))
     })
   };
@@ -81,7 +80,7 @@ function App() {
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
   useEffect(() => { fetchData(); }, [state.queryTerm]);
 
-  // Example filterfunction for API response from ./helpers
+  // Example filter function for API response from ./helpers
   const greenData = filterData(state.apiData, "green");
   const blueData = filterData(state.apiData, "blue");
   const yellowData = filterData(state.apiData, "yellow");
@@ -188,8 +187,8 @@ function App() {
             <Route path="/">
               {state.splash ?
                 <Splash /> : state.loading ? 
-                <Loading message={"...surfing" } /> : 
-                <Search onSave={saveFn} /> 
+                  <Loading message={"...surfing" } /> : 
+                    <Search onSave={saveFn} /> 
               }
               <div className='green-zone'>
                 <div className='toprow'>
