@@ -80,7 +80,7 @@ function App() {
   // [] within useEffect states this will cleanUp once a search term has been entered by user.
   useEffect(() => { fetchData(); }, [state.queryTerm]);
 
-  // Example filter function for API response from ./helpers
+  // Example filter function for API response from ./helpers/selectors
   const greenData = filterData(state.apiData, "green");
   const blueData = filterData(state.apiData, "blue");
   const yellowData = filterData(state.apiData, "yellow");
