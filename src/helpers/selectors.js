@@ -34,7 +34,7 @@ const product = [
   },
   {
     domain_id: 5678,
-    domain: 'kujiji',
+    domain: 'kijiji',
     category: 'green',
     url: 'http://theurl.com',
     images: [
@@ -49,7 +49,7 @@ const product = [
   },
   {
     domain_id: 111213,
-    domain: 'kujiji',
+    domain: 'kijiji',
     category: 'green',
     url: 'http://theurl.com',
     images: [
