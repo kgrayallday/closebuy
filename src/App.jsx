@@ -98,7 +98,7 @@ function App() {
           price={listing.price}
           category={listing.category}
           domain={listing.domain}
-          saveFavourite={saveFavourite}
+          saveFavourite={saveFavorite}
           deleteFavorite={deleteFavorite}
           favoritesData={state.favoritesData}
         />
